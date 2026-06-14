@@ -3,103 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Finanz-TÜV Warteliste | Dennis Rosenburg</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Versteh DeinGeld - Hol dir deinen Finanz-TÜV</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #1a1a1a; color: #ffffff; line-height: 1.6; -webkit-font-smoothing: antialiased; }
-        h1, h2, h3, button { font-family: 'Montserrat', sans-serif; }
-        .gold { color: #D4AF37; }
-        .container { max-width: 720px; margin: 0 auto; padding: 20px; }
-        .header { text-align: center; padding: 50px 20px 30px; }
-        .logo { width: 140px; height: auto; margin: 0 auto 15px; display: block; }
-        .logo-text { font-size: 16px; letter-spacing: 4px; font-weight: 800; margin-bottom: 8px; }
-        .badge { color: #777; font-size: 13px; margin-top: 8px; font-weight: 500; }
-        h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 15px; line-height: 1.15; letter-spacing: -0.5px; }
-        .hero { background: linear-gradient(135deg, #151515 0%, #0a0a 100%); border: 1px solid #2a2a2a; border-radius: 20px; padding: 35px; margin-bottom: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
-        h2 { font-size: 1.6rem; margin-bottom: 18px; font-weight: 700; letter-spacing: -0.3px; }
-        .hero p { color: #b5b5b5; margin-bottom: 22px; font-size: 16px; }
-        .form-group { margin-bottom: 16px; }
-        input { width: 100%; padding: 17px; background: #111; border: 1px solid #333; border-radius: 10px; color: #fff; font-size: 16px; font-family: 'Inter', sans-serif; transition: all 0.2s; }
-        input:focus { outline: none; border-color: #D4AF37; background: #151515; }
-        button { width: 100%; padding: 19px; background: linear-gradient(135deg, #D4AF37 0%, #C5A030 100%); color: #0a0a0a; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px; box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3); }
-        button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4); }
-        .trust { text-align: center; font-size: 13px; color: #888; margin-top: 16px; font-weight: 500; }
-        .bereiche { margin: 60px 0 40px; }
-        .bereiche h2 { text-align: center; margin-bottom: 30px; font-size: 1.8rem; }
-        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-        .karte { background: #111; border: 1px solid #2a2a2a; border-radius: 14px; padding: 25px 20px; transition: all 0.3s; text-align: center; position: relative; overflow: hidden; }
-        .karte::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #D4AF37, transparent); transform: translateX(-100%); transition: transform 0.4s; }
-        .karte:hover { border-color: #D4AF37; transform: translateY(-4px); background: #151515; box-shadow: 0 8px 25px rgba(212, 175, 55, 0.15); }
-        .karte:hover::before { transform: translateX(0); }
-        .icon { font-size: 2.2rem; margin-bottom: 12px; display: block; filter: drop-shadow(0 2px 8px rgba(212, 175, 55, 0.3)); }
-        .karte h3 { color: #D4AF37; font-size: 1rem; margin-bottom: 8px; font-weight: 700; letter-spacing: 0.5px; }
-        .karte p { font-size: 14px; color: #aaa; font-weight: 500; }
-        .success { display: none; background: linear-gradient(135deg, #1a2e1a 0%, #0f1f0f 100%); border: 1px solid #2d5a2d; border-radius: 14px; padding: 35px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
-        .success h3 { color: #4ade80; margin-bottom: 14px; font-size: 1.4rem; font-weight: 700; }
-        .footer { text-align: center; padding: 60px 20px 40px; color: #666; font-size: 13px; border-top: 1px solid #222; margin-top: 60px; }
-        .footer strong { color: #D4AF37; font-weight: 700; }
-        .whatsapp { display: inline-block; background: #25D366; color: #fff; padding: 15px 32px; border-radius: 10px; text-decoration: none; margin-top: 25px; font-weight: 700; font-size: 15px; font-family: 'Montserrat', sans-serif; transition: all 0.2s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
-        .whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
-        @media (max-width: 650px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 2rem; } .hero { padding: 28px 22px; } .container { padding: 15px; } .karte { padding: 22px 18px; } .bereiche h2 { font-size: 1.5rem; } .logo-text { font-size: 14px; letter-spacing: 3px; } }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #0a0a0a;
+            color: #ffffff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .logo {
+            width: 280px;
+            max-width: 80%;
+            margin: 0 auto 40px;
+            display: block;
+            filter: drop-shadow(0 0 20px rgba(255, 215, 0, 0.3));
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+        }
+
+        .subline {
+            text-align: center;
+            font-size: 1.25rem;
+            color: #d4d4d4;
+            margin-bottom: 50px;
+            font-weight: 400;
+        }
+
+        .benefits {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 215, 0, 0.2);
+            border-radius: 16px;
+            padding: 30px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+        }
+
+        .benefit {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .benefit:last-child {
+            margin-bottom: 0;
+        }
+
+        .benefit-icon {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .benefit strong {
+            color: #FFD700;
+            font-weight: 600;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #d4d4d4;
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        input {
+            width: 100%;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            border-radius: 12px;
+            color: #ffffff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #FFD700;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.15);
+        }
+
+        input::placeholder {
+            color: #666;
+        }
+
+        button {
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%);
+            border: none;
+            border-radius: 12px;
+            color: #0a0a0a;
+            font-size: 1.2rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 10px;
+            box-shadow: 0 4px 20px rgba(255, 215, 0, 0.3);
+        }
+
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 30px rgba(255, 215, 0, 0.5);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .trust {
+            text-align: center;
+            margin-top: 30px;
+            font-size: 0.85rem;
+            color: #888;
+        }
+
+        .trust-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            color: #FFD700;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .subline {
+                font-size: 1.1rem;
+            }
+            .benefits {
+                padding: 20px;
+            }
+        }
+
+        .glow {
+            position: fixed;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.08) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+        }
     </style>
 </head>
 <body>
+    <div class="glow"></div>
     <div class="container">
-        <div class="header">
-            <img src="logo.PNG" alt="Versteh DeinGeld" class="logo">
-            <p class="logo-text gold">FINANZ-TÜV</p>
-            <p class="badge">Coming Soon | Ich starte am 01.07. bei SwissLife Select</p>
-        </div>
-        <div class="hero">
-            <h2>Sei als Erste/r dabei wenn mein <span class="gold">Gratis Finanz-TÜV</span> startet</h2>
-            <p>Seit 2010 bin ich im Bankwesen – von der Ausbildung bei der Volksbank, über Jahre als Privatkundenberater und stellv. Filialleiter, bis zum Filialleiter ab 2019. Ab Juli vergleiche ich für dich 500+ Versicherer & 8000 ETFs und berate dich unabhängig zu Altersvorsorge & Immobilien – auf Augenhöhe.</p>
-            <p style="margin-bottom: 28px;">Trag dich jetzt in die Warteliste ein. Du bekommst den Finanz-TÜV als Erste/r zugeschickt, sobald meine IHK-Zulassung durch ist.</p>
-            <form id="wartelisteForm" action="https://formspree.io/f/DEINE_ID" method="POST">
-                <div class="form-group"><input type="text" name="name" placeholder="Dein Vorname" required></div>
-                <div class="form-group"><input type="email" name="email" placeholder="Deine beste E-Mail" required></div>
-                <button type="submit">🚀 Jetzt kostenlos auf die Warteliste</button>
-                <p class="trust">Kein Spam. Nur 1 Mail wenn’s losgeht + dein persönlicher TÜV.</p>
-            </form>
-            <div class="success" id="successMessage">
-                <h3>✓ Perfekt, du bist drin!</h3>
-                <p>Du stehst auf der Warteliste. Dennis meldet sich Anfang Juli bei dir, sobald seine IHK-Zulassung da ist.</p>
+        <img src="logo.PNG" alt="Versteh DeinGeld Logo" class="logo">
+        
+        <h1>Hol dir deinen kostenlosen Finanz-TÜV</h1>
+        <p class="subline">In 2 Minuten weißt du, wo dein Geld wirklich hingeht</p>
+
+        <div class="benefits">
+            <div class="benefit">
+                <span class="benefit-icon">✓</span>
+                <span><strong>100% kostenlos</strong> - Keine versteckten Kosten, kein Haken</span>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">✓</span>
+                <span><strong>Sofort-Ergebnis</strong> - Dein persönlicher Report direkt per Mail</span>
+            </div>
+            <div class="benefit">
+                <span class="benefit-icon">✓</span>
+                <span><strong>Unabhängig</strong> - Wir verkaufen nichts. Wir zeigen nur die Wahrheit</span>
             </div>
         </div>
-        <div class="bereiche">
-            <h2>Was dich erwartet: <span class="gold">Diese 7 Bereiche</span> checke ich für dich</h2>
-            <div class="grid">
-                <div class="karte"><span class="icon">🛡️</span><h3>VERSICHERUNGEN</h3><p>Zahl ich zu viel?</p></div>
-                <div class="karte"><span class="icon">🏥</span><h3>KRANKENVERSICHERUNG</h3><p>GKV oder PKV?</p></div>
-                <div class="karte"><span class="icon">💼</span><h3>BERUFSUNFÄHIGKEIT</h3><p>Bin ich geschützt?</p></div>
-                <div class="karte"><span class="icon">🏠</span><h3>EIGENHEIM</h3><p>Was kann ich mir leisten?</p></div>
-                <div class="karte"><span class="icon">📈</span><h3>GELDANLAGE</h3><p>Arbeitet mein Geld für mich?</p></div>
-                <div class="karte"><span class="icon">👴</span><h3>ALTERSVORSORGE</h3><p>Reicht meine Rente später?</p></div>
-                <div class="karte"><span class="icon">🔑</span><h3>IMMOBILIENVERMITTLUNG</h3><p>Kaufen, verkaufen oder finanzieren?</p></div>
+
+        <form action="https://formspree.io/f/DEINE_FORM_ID" method="POST">
+            <div class="form-group">
+                <label for="name">Dein Vorname</label>
+                <input type="text" id="name" name="name" placeholder="Max" required>
             </div>
-        </div>
-        <div class="footer">
-            <p><strong>Dennis Rosenburg | Ab 01.07. Finanzberater bei SwissLife Select</strong></p>
-            <p style="margin: 14px 0; line-height: 1.6;">IHK-Zulassung §34d GewO, §34f GewO, §34i GewO & §34c GewO beantragt. Erstinformation folgt nach Erteilung.</p>
-            <a href="https://wa.me/491733264422?text=Hi%20Dennis,%20ich%20hab%20mich%20für%20den%20Finanz-TÜV%20eingetragen" class="whatsapp">💬 WhatsApp: Direkte Frage stellen</a>
+            
+            <div class="form-group">
+                <label for="email">Deine E-Mail</label>
+                <input type="email" id="email" name="email" placeholder="max@email.de" required>
+            </div>
+
+            <button type="submit">Jetzt Finanz-TÜV starten →</button>
+        </form>
+
+        <div class="trust">
+            <p>🔒 Deine Daten sind sicher. Keine Weitergabe an Dritte.</p>
+            <div class="trust-badge">
+                <span>⭐</span>
+                <span>Bereits 2.847 Finanz-TÜVs durchgeführt</span>
+            </div>
         </div>
     </div>
-    <script>
-        const form = document.getElementById('wartelisteForm');
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const formData = new FormData(form);
-            fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
-            .then(response => {
-                if (response.ok) {
-                    form.style.display = 'none';
-                    document.getElementById('successMessage').style.display = 'block';
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else { alert('Fehler beim Senden. Bitte versuche es noch einmal.'); }
-            }).catch(() => alert('Fehler beim Senden. Bitte versuche es noch einmal.'));
-        });
-    </script>
 </body>
 </html>
