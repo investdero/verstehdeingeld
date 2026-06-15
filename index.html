@@ -91,9 +91,12 @@
             <h2>Sei als Erste/r dabei wenn mein <span class="gold">Gratis Finanz-TÜV</span> startet</h2>
             <p>Seit 2010 bin ich im Bankwesen – von der Ausbildung bei der Volksbank, über Jahre als Privatkundenberater und stellv. Filialleiter aktiv, bis zum Filialleiter ab 2019. Ab Juli vergleiche ich für dich 500+ Versicherer & 8000 ETFs und Anlagemöglichkeiten und berate dich unabhängig zu Altersvorsorge & Immobilien – auf Augenhöhe.</p>
             <p style="margin-bottom: 28px;">Trag dich jetzt in die Warteliste ein. Du bekommst den Finanz-TÜV als Erste/r zugeschickt, sobald meine IHK-Zulassung durch ist.</p>
-            <form id="wartelisteForm" action="https://formspree.io/f/xnjylyde" method="POST">
+                        <form id="wartelisteForm" action="https://formsubmit.co/investdero@gmail.com" method="POST">
                 <input type="hidden" name="_next" value="https://investdero.github.io/finanz-tuev/danke.html">
-<input type="hidden" name="_subject" value="Neuer Finanz-TÜV Lead!">
+                <input type="hidden" name="_subject" value="Neuer Finanz-TÜV Lead!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                
                 <div class="form-group"><input type="text" name="name" placeholder="Dein Vorname" required></div>
                 <div class="form-group"><input type="email" name="email" placeholder="Deine beste E-Mail"></div>
                 <div class="form-group"><input type="tel" name="phone" placeholder="Deine Handynummer für WhatsApp"></div>
@@ -124,7 +127,7 @@
             <a href="https://wa.me/491733264422?text=Hi%20Dennis,%20ich%20hab%20mich%20für%20den%20Finanz-TÜV%20eingetragen" class="whatsapp">💬 WhatsApp: Direkte Frage stellen</a>
         </div>
     </div>
-            <script>
+                <script>
         document.getElementById('wartelisteForm').addEventListener('submit', function(e) {
             var email = this.querySelector('input[name="email"]').value.trim();
             var phone = this.querySelector('input[name="phone"]').value.trim();
