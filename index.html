@@ -124,30 +124,16 @@
             <a href="https://wa.me/491733264422?text=Hi%20Dennis,%20ich%20hab%20mich%20für%20den%20Finanz-TÜV%20eingetragen" class="whatsapp">💬 WhatsApp: Direkte Frage stellen</a>
         </div>
     </div>
-        <script>
-        const form = document.getElementById('wartelisteForm');
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            const email = form.querySelector('input[name="email"]').value.trim();
-            const phone = form.querySelector('input[name="phone"]').value.trim();
-            
+            <script>
+        document.getElementById('wartelisteForm').addEventListener('submit', function(e) {
+            var email = this.querySelector('input[name="email"]').value.trim();
+            var phone = this.querySelector('input[name="phone"]').value.trim();
             if (!email && !phone) {
+                e.preventDefault();
                 alert('Bitte gib deine E-Mail oder Handynummer an.');
-                return;
+                return false;
             }
-            
-            const formData = new FormData(form);
-            fetch(form.action, { method: 'POST', body: formData, headers: { 'Accept': 'application/json' } })
-            .then(response => {
-                if (response.ok) {
-                    form.style.display = 'none';
-                    document.getElementById('successMessage').style.display = 'block';
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                } else { alert('Fehler beim Senden. Bitte versuche es noch einmal.'); }
-            }).catch(() => alert('Fehler beim Senden. Bitte versuche es noch einmal.'));
         });
     </script>
-</body>
-</html>
 </body>
 </html>
