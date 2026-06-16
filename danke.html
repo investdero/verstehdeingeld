@@ -3,63 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danke – Dein Finanz-TÜV kommt</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Danke – Versteh dein Geld</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
-            font-family: 'Inter', sans-serif; 
-            background: #0a0a0a;
+            background: #000000; 
             color: #ffffff; 
-            line-height: 1.6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 20px;
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
         }
-        .container { max-width: 600px; text-align: center; }
-        .logo { width: 200px; margin: 0 auto 30px; display: block; }
-        h1 { font-family: 'Montserrat', sans-serif; font-size: 2.2rem; font-weight: 800; margin-bottom: 20px; }
-        .gold { color: #FFD700; }
-        p { color: #d4d4d4; font-size: 18px; margin-bottom: 35px; line-height: 1.7; }
-        .btn { 
-            display: inline-block; 
-            padding: 19px 35px; 
-            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); 
-            color: #0a0a0a; 
-            border-radius: 10px; 
+        .container {
+            max-width: 600px; 
+            margin: 0 auto; 
+            padding: 60px 20px; 
+            text-align: center;
+        }
+        h1 { 
+            color: #f59e0b; 
+            font-size: 36px; 
+            margin-bottom: 30px; 
+        }
+        p { 
             font-size: 18px; 
-            font-weight: 700; 
-            text-decoration: none;
-            font-family: 'Montserrat', sans-serif;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
-            transition: all 0.2s;
+            line-height: 1.6; 
+            margin-bottom: 30px; 
         }
-        .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); }
-        .trust { font-size: 14px; color: #888; margin-top: 30px; }
+        .pdf-button {
+            display: inline-block;
+            background: #f59e0b; 
+            color: #000000; 
+            padding: 18px 35px; 
+            text-decoration: none; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            font-size: 18px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+        .pdf-button:hover {
+            background: #d97706;
+            transform: scale(1.05);
+        }
+        .logo {
+            width: 200px;
+            margin-bottom: 40px;
+        }
     </style>
 </head>
 <body>
+
+    <!-- Content Container -->
     <div class="container">
-        <img src="logo.PNG" alt="Versteh DeinGeld" class="logo">
-        <h1>🎉 <span class="gold">Perfekt, du bist drin!</span></h1>
-        <p>Du stehst auf der Warteliste. Ich melde mich Anfang Juli bei dir, sobald meine IHK-Zulassung da ist.</p>
-        <p><strong>Als Dankeschön:</strong> Hier ist deine kostenlose PDF-Checkliste "7 Finanz-Fehler die dich 100.000€ kosten".</p>
-        <a href="Finanz-TUEV-Giveaway.pdf" class="btn" download>📄 Gratis PDF-Checkliste herunterladen</a>
-        <p class="trust">Kein Spam. Nur 1 Nachricht wenn’s losgeht + dein persönlicher TÜV.</p>
-    </div>
- <!-- Footer Dankeseite -->
-<footer style="text-align: center; padding: 30px 20px; font-size: 12px; background: #000000; color: #ffffff; border-top: 1px solid #f59e0b; margin-top: 60px; width: 100%; display: block;">
-    <a href="index.html" style="color: #ffffff; text-decoration: none; margin: 0 10px;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#ffffff'">Startseite</a>
-    <span style="color: #f59e0b;">|</span> 
-    <a href="impressum.html" style="color: #ffffff; text-decoration: none; margin: 0 10px;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#ffffff'">Impressum</a>
-    <span style="color: #f59e0b;">|</span> 
-    <a href="datenschutz.html" style="color: #ffffff; text-decoration: none; margin: 0 10px;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#ffffff'">Datenschutz</a>
-    
-    <p style="margin-top: 15px; color: #999; font-size: 11px;">
-        © 2026 Dennis Rosenburg
-    </p>
-</footer>  
+        <img src="logo.png" alt="Versteh dein Geld" class="logo">
+        
+        <h1>🎉 Perfekt, du bist drin!</h1>
+        
+        <p>
+            <strong>Du bekommst deine PDF-Checkliste sofort per Mail.</strong><br>
+            Check auch deinen Spam-Ordner.
+        </p>
+        
+        <p>
+            Ich melde mich persönlich bei dir für deinen <strong style="color: #f59e0b;">kostenlosen Finanz-TÜV</strong>.
+        </p>
+
+        <p style="color: #999; font-size: 16px;">
+            Als Dankeschön: Hier ist deine kostenlose PDF-Checkliste<br>
+            <strong>"7 Finanz-Fehler die dich 100.000€ kosten"</strong>
+        </p>
+        
+        <a href="Finanz-TUEV-Giveaway.pdf" download class="pdf-button">
+            📄 Gratis PDF-Checkliste herunterladen
+        </a>
+
+        <p style="margin-top: 40px; font-size: 14px; color: #999;">
+            Fragen? Schreib mir direkt auf WhatsApp:<br>
+            <a href="https://wa.me/491725693073" style="color: #f59e0b; text-decoration: none;">+49 172 5693073</a>
+        </p>
+    </div> <!-- Content Container ENDE -->
+
+    <!-- Footer STEHT AUSSERHALB vom Container = Volle Breite + Zentriert -->
+    <footer style="text-align: center; padding: 30px 20px; font-size: 12px; background: #000000; color: #ffffff; border-top: 2px solid #f59e0b; width: 100%; clear: both; display: block;">
+        <a href="index.html" style="color: #ffffff; text-decoration: none; margin: 0 10px;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#ffffff'">Startseite</a>
+        <span style="color: #f59e0b;">|</span> 
+        <a href="impressum.html" style="color: #ffffff; text-decoration: none; margin: 0 10px;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#ffffff'">Impressum</a>
+        <span style="color: #f59e0b;">|</span> 
+        <a href="datenschutz.html" style="color: #ffffff; text-decoration: none; margin: 0 10px;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#ffffff'">Datenschutz</a>
+        
+        <p style="margin-top: 15px; color: #999; font-size: 11px;">
+            © 2026 Dennis Rosenburg
+        </p>
+    </footer>
+
 </body>
 </html>
