@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deutsche Yacht in Kroatien? | VerstehDeinGeld</title>
+    <meta name="description" content="Kostenloser Yacht-Check für deutsche Eigner in Kroatien. Unabhängige Finanzberatung von Dennis Rosenburg | Partner Swiss Life Select.">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { 
+            color: #FFFFFF; 
+            font-family: 'Inter', sans-serif; 
+            font-size: 16px; 
+            line-height: 1.6; 
+            overflow-x: hidden; 
+            position: relative;
+            background: #0A0A;
+        }
+        
+        /* VIDEO BACKGROUND - EXAKT WIE AUF DEINER HAUPTSEITE */
+        .video-bg { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            z-index: -2; 
+            overflow: hidden;
+            pointer-events: none;
+        }
+        .video-bg video { 
+            position: absolute;
+            top: 50%; 
+            left: 50%; 
+            min-width: 100%; 
+            min-height: 100%; 
+            width: auto; 
+            height: auto; 
+            transform: translate(-50%, -50%) scale(1.1); /* SCALE = WASSERZEICHEN WEG */
+            object-fit: cover;
+            filter: brightness(0.3); /* VIDEO SELBST ABDUNKELN */
+        }
+        .video-overlay { 
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100vw; 
+            height: 100vh; 
+            background: rgba(0,0,0,0.6); /* ZUSÄTZLICHER OVERLAY */
+            z-index: -1; 
+            pointer-events: none;
+        }
+        
+        header, section, footer { position: relative; z-index: 1; }
+        
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        section { padding: 60px 0; }
+        h1, h2, h3 { font-family: 'Montserrat', sans-serif; color: #C9A961; font-weight: 700; }
+        h1 { font-size: 48px; line-height: 1.2; margin-bottom: 20px; }
+        h2 { font-size: 32px; margin-bottom: 30px; }
+        a { cursor: pointer !important; text-decoration: none; color: inherit; }
+        
+        /* Header - LOGO GROSS */
+        .header { text-align: center; padding: 80px 0 40px; }
+        .header img { height: 120px; max-width: 400px; width: auto; }
+        
+        /* Hero */
+        .trust-badge { 
+            color: #C9A961; 
+            font-size: 14px; 
+            letter-spacing: 1px; 
+            margin-bottom: 16px; 
+            font-weight: 400;
+        }
+        .hero p { font-size: 18px; margin-bottom: 30px; color: #CCCCCC; }
+        
+        /* Buttons */
+        .btn-whatsapp { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 12px; 
+            background: #25D366; 
+            color: #fff; 
+            padding: 18px 32px; 
+            border-radius: 8px; 
+            font-weight: 600; 
+            font-size: 18px; 
+            transition: background 0.3s;
+        }
+        .btn-whatsapp:hover { background: #1DA851; }
+        .btn-whatsapp svg { width: 24px; height: 24px; }
+        
+        .btn-floating { 
+            position: fixed; 
+            bottom: 24px; 
+            right: 24px; 
+            z-index: 999999; 
+            background: #25D366; 
+            width: 60px; 
+            height: 60px; 
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            box-shadow: 0 4px 12px rgba(0,0,0.4); 
+            transition: transform 0.3s;
+        }
+        .btn-floating:hover { transform: scale(1.1); }
+        .btn-floating svg { width: 32px; height: 32px; }
+        
+        /* Trust Liste */
+        .trust-list { margin: 30px 0; }
+        .trust-item { 
+            color: #fff; 
+            margin: 12px 0; 
+            font-size: 17px;
+            display: flex;
+            align-items: center;
+        }
+        .trust-item::before { 
+            content: "✓"; 
+            color: #C9A961; 
+            margin-right: 12px; 
+            font-weight: 700;
+            font-size: 20px;
+        }
+        
+        /* Footer */
+        .footer { 
+            border-top: 1px solid #222; 
+            padding: 40px 0; 
+            margin-top: 60px; 
+            font-size: 14px; 
+            color: #999; 
+        }
+        .footer a { color: #C9A961; }
+        .footer a:hover { text-decoration: underline; }
+        
+        /* Mobile */
+        @media (max-width: 768px) {
+            h1 { font-size: 32px; }
+            h2 { font-size: 24px; }
+            .header img { height: 90px; }
+            .btn-whatsapp { width: 100%; justify-content: center; }
+            section { padding: 40px 0; }
+        }
+    </style>
+</head>
+<body>
+<!-- Video Background -->
+<div class="video-bg">
+  <video autoplay muted loop playsinline>
+    <source src="Dennis-bg.MP4" type="video/mp4">
+  </video>
+  <div class="video-overlay"></div>
+</div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="https://verstehdeingeld.de" target="_blank">
+                <img src="logo.PNG" alt="VerstehDeinGeld - Dennis Rosenburg">
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="trust-badge">Unabhängig · Vertriebspartner Swiss Life Select ab 01.07.2026</div>
+            
+            <h1>Deutsche Yacht in Kroatien?<br><span style="color: #FFFFFF;">Lass uns deine Absicherung checken.</span></h1>
+            
+            <p>Zahlt deine Versicherung wenn SeaHelp dich bergen muss? Der Yacht-Check ist kostenlos und unverbindlich. Wenn du magst, schauen wir danach auch auf BU, Altersvorsorge & Co. Ich arbeite unabhängig – u.a. mit Swiss Life Select.</p>
+            
+            <a href="https://wa.me/message/NAB5UQOF54WCA1" target="_blank" class="btn-whatsapp">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.333 0 2.35.618 4.642 1.794 6.663L2.667 29.333l6.833-1.792c1.936 1.06 4.127 1.622 6.391 1.623h.003c7.363 0 13.334-5.97 13.334-13.334C29.328 8.637 23.364 2.667 16.001 2.667zm7.733 19.207c-.333.933-1.967 1.783-2.71 1.897-.684.107-1.553.152-2.503-.157-.577-.188-1.317-.43-2.267-.842-3.986-1.722-6.587-5.762-6.787-6.028-.2-.267-1.633-2.167-1.633-4.133 0-1.967 1.033-2.933 1.4-3.333.367-.4.8-.5 1.067-.5.267 0 .533.002.767.014.247.012.577-.093.903.687.333.8 1.133 2.767 1.233 2.967.1.2.167.433.033.7-.133.267-.2.433-.4.667-.2.233-.42.52-.6.7-.2.2-.407.42-.173.82.233.4 1.037 1.71 2.227 2.77 1.533 1.367 2.827 1.792 3.227 1.992.4.2.633.167.867-.1.233-.267 1-1.167 1.267-1.567.267-.4.533-.333.9-.2.367.133 2.32 1.094 2.72 1.294.4.2.667.3.767.467.1.167.1.967-.233 1.9z" fill="#fff"/>
+                </svg>
+                Schreib mir auf WhatsApp
+            </a>
+            
+            <div class="trust-list">
+                <div class="trust-item">14 Jahre Bankwesen, ehem. Filialleiter Volksbank</div>
+                <div class="trust-item">500+ Tarife verglichen für meine Mandanten</div>
+                <div class="trust-item">100% unabhängig – ich vertrete dich, nicht den Versicherer</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Deckungslücken -->
+    <section>
+        <div class="container">
+            <h2 style="color: #C9A961; font-size: 16px; letter-spacing: 2px;">DIE TEUERSTEN DECKUNGSLÜCKEN</h2>
+            <h2 style="color: #FFFFFF; margin-top: 10px;">Gefahr ohne Check</h2>
+            <p style="color: #CCCCCC; max-width: 700px;">80% aller deutschen Yacht-Policen haben gefährliche Lücken in Kroatien. Diese 3 Punkte kosten dich im Ernstfall 50.000€+: Bergung durch SeaHelp, Crew-Haftpflicht, Charterschäden.</p>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section style="text-align: center; background: rgba(17,17,0.8);">
+        <div class="container">
+            <h2>Bereit für deinen kostenlosen Yacht-Check?</h2>
+            <p style="color: #CCCCCC; margin-bottom: 30px;">Schreib mir kurz auf WhatsApp. Ich melde mich persönlich bei dir.</p>
+            
+            <a href="https://wa.me/message/NAB5UQOF54WCA1" target="_blank" class="btn-whatsapp">
+                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.333 0 2.35.618 4.642 1.794 6.663L2.667 29.333l6.833-1.792c1.936 1.06 4.127 1.622 6.391 1.623h.003c7.363 0 13.334-5.97 13.334-13.334C29.328 8.637 23.364 2.667 16.001 2.667zm7.733 19.207c-.333.933-1.967 1.783-2.71 1.897-.684.107-1.553.152-2.503-.157-.577-.188-1.317-.43-2.267-.842-3.986-1.722-6.587-5.762-6.787-6.028-.2-.267-1.633-2.167-1.633-4.133 0-1.967 1.033-2.933 1.4-3.333.367-.4.8-.5 1.067-.5.267 0 .533.002.767.014.247.012.577-.093.903.687.333.8 1.133 2.767 1.233 2.967.1.2.167.433.033.7-.133.267-.2.433-.4.667-.2.233-.42.52-.6.7-.2.2-.407.42-.173.82.233.4 1.037 1.71 2.227 2.77 1.533 1.367 2.827 1.792 3.227 1.992.4.2.633.167.867-.1.233-.267 1-1.167 1.267-1.567.267-.4.533-.333.9-.2.367.133 2.32 1.094 2.72 1.294.4.2.667.3.767.467.1.167.1.967-.233 1.9z" fill="#fff"/>
+                </svg>
+                Kostenlose Einschätzung anfragen
+            </a>
+        </div>
+    </section>
+
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/message/NAB5UQOF54WCA1" target="_blank" class="btn-floating">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.333 0 2.35.618 4.642 1.794 6.663L2.667 29.333l6.833-1.792c1.936 1.06 4.127 1.622 6.391 1.623h.003c7.363 0 13.334-5.97 13.334-13.334C29.328 8.637 23.364 2.667 16.001 2.667zm7.733 19.207c-.333.933-1.967 1.783-2.71 1.897-.684.107-1.553.152-2.503-.157-.577-.188-1.317-.43-2.267-.842-3.986-1.722-6.587-5.762-6.787-6.028-.2-.267-1.633-2.167-1.633-4.133 0-1.967 1.033-2.933 1.4-3.333.367-.4.8-.5 1.067-.5.267 0 .533.002.767.014.247.012.577-.093.903.687.333.8 1.133 2.767 1.233 2.967.1.2.167.433.033.7-.133.267-.2.433-.4.667-.2.233-.42.52-.6.7-.2.2-.407.42-.173.82.233.4 1.037 1.71 2.227 2.77 1.533 1.367 2.827 1.792 3.227 1.992.4.2.633.167.867-.1.233-.267 1-1.167 1.267-1.567.267-.4.533-.333.9-.2.367.133 2.32 1.094 2.72 1.294.4.2.667.3.767.467.1.167.1.967-.233 1.9z" fill="#fff"/>
+        </svg>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p><strong>VerstehDeinGeld - Dennis Rosenburg</strong></p>
+            <p>Unabhängiger Finanzberater | Offizieller Vertriebspartner Swiss Life Select ab 01.07.2026</p>
+            <p style="margin-top: 20px;">
+                <a href="https://verstehdeingeld.de" target="_blank">verstehdeingeld.de</a> | 
+                <a href="https://verstehdeingeld.de/impressum" target="_blank">Impressum</a> | 
+                <a href="https://verstehdeingeld.de/datenschutz" target="_blank">Datenschutz</a>
+            </p>
+            <p style="margin-top: 20px; font-size: 12px;">© 2026 VerstehDeinGeld</p>
+        </div>
+    </footer>
+
+</body>
+</html>
