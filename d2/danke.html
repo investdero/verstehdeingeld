@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Danke – D2 Team</title>
+<link rel="icon" href="logo-d2-gold.PNG" type="image/png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config = { theme: { extend: { colors: { gold: '#D4AF37' }, fontFamily: { montserrat: ['Montserrat', 'sans-serif'], inter: ['Inter', 'sans-serif'] }}}}</script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>body{background:#000;font-family:'Inter',sans-serif} h1,h2{font-family:'Montserrat',sans-serif}</style>
+</head>
+<body class="text-white min-h-screen flex flex-col">
+<nav class="border-b border-zinc-900 py-4 px-4">
+  <div class="max-w-6xl mx-auto flex items-center gap-3">
+    <img src="logo-d2-gold.PNG" class="h-9 w-auto" alt="D²">
+    <span class="font-montserrat font-black text-xl">TEAM</span>
+  </div>
+</nav>
+
+<main class="flex-1 flex items-center py-12 md:py-20 px-4">
+  <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center w-full">
+    <div class="order-2 lg:order-1">
+      <div class="relative rounded-2xl overflow-hidden border border-zinc-800 bg-zinc-950">
+        <img src="danke-team.jpg" alt="Dennis & Dennis – D2 Team" class="w-full h-auto object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+      </div>
+    </div>
+    <div class="order-1 lg:order-2">
+      <div class="inline-block mb-4 px-3 py-1.5 bg-gold/10 border border-gold/30 rounded-full">
+        <p class="text-[#D4AF37] text-xs font-semibold tracking-wider">ANFRAGE ERHALTEN</p>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black mb-4 leading-tight">Danke.<br><span class="text-[#D4AF37]">Du bist drin.</span></h1>
+      <p class="text-xl text-zinc-300 mb-8">Ball ist bei uns. Wir melden uns innerhalb von 24h bei dir.</p>
+
+      <div class="space-y-4 mb-10 text-zinc-300">
+        <div class="flex gap-3"><span class="text-[#D4AF37] font-black">1.</span><span><strong class="text-white">Check:</strong> Wir schauen uns deine Verträge an.</span></div>
+        <div class="flex gap-3"><span class="text-[#D4AF37] font-black">2.</span><span><strong class="text-white">Rückruf:</strong> Dennis & Dennis melden sich persönlich.</span></div>
+        <div class="flex gap-3"><span class="text-[#D4AF37] font-black">3.</span><span><strong class="text-white">Gameplan:</strong> Kostenlos, klar, ohne Bullshit.</span></div>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a href="index.html" class="px-6 py-3 bg-[#D4AF37] text-black font-bold rounded-lg hover:scale-[1.03] transition">Zurück zur Startseite</a>
+        <!-- <a href="https://wa.me/49XXXXXXXX" class="px-6 py-3 border border-[#D4AF37] text-[#D4AF37] font-bold rounded-lg hover:bg-[#D4AF37] hover:text-black transition">Per WhatsApp schreiben</a> -->
+      </div>
+
+      <p class="text-xs text-zinc-500 mt-8">Kein Spam. Deine Daten bleiben bei uns. Siehe <a href="datenschutz.html" class="text-[#D4AF37] underline">Datenschutz</a>.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="border-t border-zinc-900 py-8 px-4 text-center text-xs text-zinc-500">
+  © 2024 D2 Team – Dennis Rosenburg & Dennis Tomen – SwissLife Select Vertriebspartner<br>
+  <a href="impressum.html" class="hover:text-[#D4AF37]">Impressum</a> • <a href="datenschutz.html" class="hover:text-[#D4AF37]">Datenschutz</a>
+</footer>
+</body>
+</html>
