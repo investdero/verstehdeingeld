@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>D2 Team | SwissLife Select | Dennis & Dennis</title>
+<link rel="icon" href="logo-d2-gold.jpg" type="image/jpeg">
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
 tailwind.config = {
@@ -36,37 +37,37 @@ tailwind.config = {
     font-weight: 800;
     letter-spacing: -0.02em;
   }
-  .text-gold {
+ .text-gold {
     color: #D4AF37;
   }
-  .bg-gold {
+ .bg-gold {
     background-color: #D4AF37;
   }
-  .border-gold {
+ .border-gold {
     border-color: #D4AF37;
   }
-  .hero-glow {
+ .hero-glow {
     background: radial-gradient(ellipse at center, rgba(212, 175, 55, 0.15) 0%, transparent 60%);
   }
-  .card-hover {
+ .card-hover {
     transition: all 0.3s ease;
   }
-  .card-hover:hover {
+ .card-hover:hover {
     transform: translateY(-8px);
     box-shadow: 0 20px 40px rgba(212, 175, 55, 0.15);
   }
-  .btn-gold {
+ .btn-gold {
     transition: all 0.3s ease;
   }
-  .btn-gold:hover {
+ .btn-gold:hover {
     transform: scale(1.05);
     box-shadow: 0 10px 30px rgba(212, 175, 55, 0.4);
   }
-  .section-divider {
+ .section-divider {
     background: linear-gradient(90deg, transparent, #D4AF37, transparent);
     height: 1px;
   }
-  .nav-blur {
+ .nav-blur {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
   }
@@ -80,7 +81,7 @@ tailwind.config = {
       transform: translateY(0);
     }
   }
-  .animate-fade-in {
+ .animate-fade-in {
     animation: fadeInUp 0.6s ease-out forwards;
   }
 </style>
@@ -92,12 +93,10 @@ tailwind.config = {
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16 md:h-20">
       <a href="#hero" class="flex items-center gap-3">
-        <div class="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
-          <span class="text-black font-montserrat font-black text-xl">D2</span>
-        </div>
+        <img src="logo-d2-gold.jpg" alt="D² Team" class="h-10 w-10 rounded-lg object-cover">
         <span class="font-montserrat font-black text-xl md:text-2xl">TEAM</span>
       </a>
-      
+
       <div class="hidden lg:flex items-center gap-8">
         <a href="#check" class="text-sm font-medium hover:text-gold transition">D2 Check</a>
         <a href="#abwehr" class="text-sm font-medium hover:text-gold transition">D2 Abwehr</a>
@@ -135,27 +134,29 @@ tailwind.config = {
 <section id="hero" class="relative min-h-screen flex items-center justify-center px-4 pt-20 overflow-hidden">
   <div class="absolute inset-0 hero-glow"></div>
   <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-gold/10 rounded-full blur-3xl"></div>
-  
+
   <div class="max-w-5xl mx-auto text-center relative z-10 animate-fade-in">
     <div class="inline-block mb-6 px-4 py-1.5 border border-gold/30 rounded-full">
       <p class="text-gold text-xs md:text-sm font-semibold tracking-wider">SWISSLIFE SELECT VERTRIEBSPARTNER</p>
     </div>
-    
+
+    <img src="logo-d2-gold.jpg" alt="D² Team Logo" class="w-28 h-28 md:w-40 md:h-40 mx-auto mb-6 rounded-2xl shadow-lg shadow-gold/10 object-cover">
+
     <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black mb-6 leading-none">
       <span class="text-white">D2</span> <span class="text-gold">TEAM</span>
     </h1>
-    
+
     <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-montserrat font-extrabold mb-4 leading-tight">
       Zwei Dennis. Ein Team für dein Geld.
     </h2>
-    
+
     <p class="text-lg md:text-xl text-zinc-300 mb-3 max-w-2xl mx-auto">
       Abpfiff ist nicht das Ende.
     </p>
     <p class="text-lg md:text-xl text-zinc-300 mb-10 max-w-2xl mx-auto">
       Wir sichern dein Spiel danach. <span class="text-gold font-bold">1000€ für deinen Verein.</span>
     </p>
-    
+
     <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
       <a href="#check" class="w-full sm:w-auto px-8 py-4 bg-gold text-black font-bold text-lg rounded-lg btn-gold">
         Komm ins D2 Team
@@ -371,7 +372,7 @@ tailwind.config = {
             <input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-black border border-zinc-800 rounded-lg focus:border-gold focus:outline-none transition text-white">
           </div>
         </div>
-        
+
         <div class="grid md:grid-cols-2 gap-6">
           <div>
             <label for="phone" class="block text-sm font-semibold mb-2">Telefon</label>
@@ -440,7 +441,7 @@ tailwind.config = {
         <h3 class="text-xl font-bold mb-3">Spieler kommt</h3>
         <p class="text-zinc-400">Du kommst ins D2 Team.</p>
       </div>
-      
+
       <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-8 text-center card-hover">
         <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
           <span class="text-black font-montserrat font-black text-2xl">2</span>
@@ -448,7 +449,7 @@ tailwind.config = {
         <h3 class="text-xl font-bold mb-3">Team kassiert</h3>
         <p class="text-zinc-400">50€ für die Mannschaftskasse.</p>
       </div>
-      
+
       <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-8 text-center card-hover">
         <div class="w-16 h-16 bg-gold rounded-full flex items-center justify-center mx-auto mb-6">
           <span class="text-black font-montserrat font-black text-2xl">3</span>
@@ -513,9 +514,7 @@ tailwind.config = {
     <div class="grid md:grid-cols-3 gap-12 mb-12">
       <div>
         <div class="flex items-center gap-3 mb-6">
-          <div class="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
-            <span class="text-black font-montserrat font-black text-xl">D2</span>
-          </div>
+          <img src="logo-d2-gold.jpg" alt="D² Team" class="w-10 h-10 rounded-lg object-cover">
           <span class="font-montserrat font-black text-2xl">TEAM</span>
         </div>
         <p class="text-zinc-400 text-sm leading-relaxed mb-4">
@@ -565,7 +564,7 @@ tailwind.config = {
         Risiken bestehen. Kapitalanlagen können Verluste bringen. BU hat Bedingungen. Immobilien sind keine Garantie.
       </p>
       <p class="pt-4">
-        © 2024 D2 Team. Dennis [Nachname] & Dennis Tomen. Alle Rechte vorbehalten.
+        © 2024 D2 Team. Dennis Rosenburg & Dennis Tomen. Alle Rechte vorbehalten.
       </p>
     </div>
   </div>
@@ -575,7 +574,7 @@ tailwind.config = {
   // Mobile Menu Toggle
   const mobileMenuBtn = document.getElementById('mobile-menu-btn');
   const mobileMenu = document.getElementById('mobile-menu');
-  
+
   mobileMenuBtn.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
     const icon = mobileMenuBtn.querySelector('i');
@@ -611,7 +610,7 @@ tailwind.config = {
   // Form handling
   const form = document.getElementById('check-form');
   const formSuccess = document.getElementById('form-success');
-  
+
   form.addEventListener('submit', (e) => {
     e.preventDefault();
     form.reset();
@@ -660,6 +659,5 @@ tailwind.config = {
   });
 </script>
 
-<script>(function(){document.addEventListener("click",function(e){var a=e.target.closest("[data-product-id]");if(!a)return;e.preventDefault();var pid=a.getAttribute("data-product-id");if(pid)parent.postMessage({type:"ecto-artifact-link-click",productId:pid},"*")})})();</script>
 </body>
 </html>
