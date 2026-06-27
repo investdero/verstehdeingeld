@@ -1,275 +1,188 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>D2 Team | SwissLife Select | Dennis & Dennis</title>
-<link rel="icon" href="logo-d2-gold.PNG" type="image/png">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-tailwind.config = {
-  theme: {
-    extend: {
-      colors: { gold: '#D4AF37', black: '#000000' },
-      fontFamily: { montserrat: ['Montserrat', 'sans-serif'], inter: ['Inter', 'sans-serif'] }
-    }
-  }
-}
-</script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-<style>
-  html { scroll-behavior: smooth; }
-  body { background:#000; font-family:'Inter',sans-serif; }
-  h1,h2,h3,h4 { font-family:'Montserrat',sans-serif; font-weight:800; letter-spacing:-0.02em; }
- .text-gold{color:#D4AF37}.bg-gold{background-color:#D4AF37}.border-gold{border-color:#D4AF37}
- .hero-glow{background:radial-gradient(ellipse at center,rgba(212,175,55,0.15) 0%,transparent 60%)}
- .card-hover{transition:all.3s ease}.card-hover:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(212,175,55,.15)}
- .btn-gold{transition:all.3s ease}.btn-gold:hover{transform:scale(1.05);box-shadow:0 10px 30px rgba(212,175,55,.4)}
- .section-divider{background:linear-gradient(90deg,transparent,#D4AF37,transparent);height:1px}
- .nav-blur{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanz-TÜV | Dennis Rosenburg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; 
+            background: #0a0a0a;
+            color: #ffffff; 
+            line-height: 1.6; 
+            -webkit-font-smoothing: antialiased; 
+            overflow-x: hidden;
+        }
+        .video-bg {
+            position: fixed;
+            top: 50%;
+            left: 75%;
+            min-width: 125%;
+            min-height: 125%;
+            width: auto;
+            height: auto;
+            transform: translateX(-50%) translateY(-50%) scale(1.1);
+            z-index: -2;
+            object-fit: cover;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(10, 10, 10, 0.88);
+            z-index: -1;
+            pointer-events: none;
+        }
+        h1, h2, h3, button { font-family: 'Montserrat', sans-serif; }
+        .gold { color: #FFD700; }
+        .container { max-width: 720px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
+        .header { text-align: center; padding: 50px 20px 30px; }
+        .logo { width: 280px; height: auto; margin: 0 auto 15px; display: block; filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.4)); }
+        .logo-text { font-size: 16px; letter-spacing: 4px; font-weight: 800; margin-bottom: 8px; }
+        .badge { color: #999; font-size: 13px; margin-top: 8px; font-weight: 500; }
+        h1 { font-size: 2.4rem; font-weight: 800; margin-bottom: 15px; line-height: 1.15; letter-spacing: -0.5px; }
+        .hero { background: linear-gradient(135deg, rgba(21, 21, 21, 0.9) 0%, rgba(0, 0, 0, 0.9) 100%); border: 1px solid rgba(255, 215, 0, 0.2); border-radius: 20px; padding: 35px; margin-bottom: 40px; box-shadow: 0 10px 40px rgba(0,0,0,0.8); text-align: center; backdrop-filter: blur(10px); }
+        h2 { font-size: 1.6rem; margin-bottom: 18px; font-weight: 700; letter-spacing: -0.3px; }
+        .hero p { color: #d4d4d4; margin-bottom: 22px; font-size: 16px; }
+        .form-group { margin-bottom: 16px; }
+        .form-hint { font-size: 13px; color: #999; margin: -8px 0 16px; text-align: center; }
+        input { width: 100%; padding: 17px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 10px; color: #fff; font-size: 16px; font-family: 'Inter', sans-serif; transition: all 0.2s; }
+        input:focus { outline: none; border-color: #FFD700; background: rgba(255, 255, 255, 0.08); box-shadow: 0 0 20px rgba(255, 215, 0, 0.15); }
+        button { width: 100%; padding: 19px; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #0a0a0a; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
+        button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); }
+        .trust { text-align: center; font-size: 13px; color: #888; margin-top: 16px; font-weight: 500; }
+        .bereiche { margin: 60px 0 40px; }
+        .bereiche h2 { text-align: center; margin-bottom: 30px; font-size: 1.8rem; }
+        .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+        .karte { background: rgba(17, 17, 17, 0.85); border: 1px solid rgba(255, 215, 0, 0.2); border-radius: 14px; padding: 25px 20px; transition: all 0.3s; text-align: center; position: relative; overflow: hidden; backdrop-filter: blur(10px); }
+        .karte::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, #FFD700, transparent); transform: translateX(-100%); transition: transform 0.4s; }
+        .karte:hover { border-color: #FFD700; transform: translateY(-4px); background: rgba(21, 21, 21, 0.9); box-shadow: 0 8px 25px rgba(255, 215, 0, 0.15); }
+        .karte:hover::before { transform: translateX(0); }
+        .icon { font-size: 2.2rem; margin-bottom: 12px; display: block; filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.3)); }
+        .karte p { font-size: 14px; color: #aaa; font-weight: 500; }
+        .footer { text-align: center; padding: 60px 20px 40px; color: #666; font-size: 13px; border-top: 1px solid #222; margin-top: 60px; }
+        .footer strong { color: #FFD700; font-weight: 700; }
+        .whatsapp { display: inline-block; background: #25D366; color: #fff; padding: 15px 32px; border-radius: 10px; text-decoration: none; margin-top: 25px; font-weight: 700; font-size: 15px; font-family: 'Montserrat', sans-serif; transition: all 0.2s; box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3); }
+        .whatsapp:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4); }
+        .dsgvo-checkbox { font-size: 12px; color: #999; text-align: left; display: block; margin: -5px 0 20px; line-height: 1.4; }
+        .dsgvo-checkbox input { width: auto; margin-right: 8px; transform: scale(1.1); }
+        .dsgvo-checkbox a { color: #FFD700; text-decoration: none; }
+        .social-proof { font-size: 14px; color: #fff; margin: -5px 0 16px; background: rgba(17,17,17,0.85); padding: 12px; border-radius: 8px; border: 1px solid rgba(255,215,0,0.2); }
+        @media (max-width: 650px) { .grid { grid-template-columns: 1fr; } h1 { font-size: 2rem; } .hero { padding: 28px 22px; } .container { padding: 15px; } .karte { padding: 22px 18px; } .bereiche h2 { font-size: 1.5rem; } .logo-text { font-size: 14px; letter-spacing: 3px; } .logo { width: 220px; } }
+    </style>
 </head>
-<body class="text-white overflow-x-hidden">
-
-<!-- NAV -->
-<nav id="navbar" class="fixed w-full z-50 bg-black/80 nav-blur border-b border-zinc-900">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <div class="flex justify-between items-center h-16 md:h-20">
-      <a href="#hero" class="flex items-center gap-3">
-        <img src="logo-d2-gold.PNG" alt="D² Team" class="h-10 w-auto">
-        <span class="font-montserrat font-black text-xl md:text-2xl">TEAM</span>
-      </a>
-      <div class="hidden lg:flex items-center gap-8">
-        <a href="#check" class="text-sm font-medium hover:text-gold transition">D2 Check</a>
-        <a href="#abwehr" class="text-sm font-medium hover:text-gold transition">D2 Abwehr</a>
-        <a href="#mittelfeld" class="text-sm font-medium hover:text-gold transition">D2 Mittelfeld</a>
-        <a href="#sturm" class="text-sm font-medium hover:text-gold transition">D2 Sturm</a>
-        <a href="#bonus" class="text-sm font-medium hover:text-gold transition">D2 Vereinsbonus</a>
-      </div>
-      <a href="#check" class="hidden md:block px-5 py-2.5 bg-gold text-black font-semibold text-sm rounded-lg btn-gold">Komm rein</a>
-      <button id="mobile-menu-btn" class="lg:hidden text-white" aria-label="Menü öffnen"><i class="fa-solid fa-bars text-2xl"></i></button>
-    </div>
-  </div>
-  <div id="mobile-menu" class="hidden lg:hidden bg-black border-t border-zinc-900">
-    <div class="px-4 py-4 space-y-3">
-      <a href="#check" class="block py-2 hover:text-gold">D2 Check</a>
-      <a href="#abwehr" class="block py-2 hover:text-gold">D2 Abwehr</a>
-      <a href="#mittelfeld" class="block py-2 hover:text-gold">D2 Mittelfeld</a>
-      <a href="#sturm" class="block py-2 hover:text-gold">D2 Sturm</a>
-      <a href="#bonus" class="block py-2 hover:text-gold">D2 Vereinsbonus</a>
-      <a href="#check" class="block mt-4 px-5 py-3 bg-gold text-black font-semibold text-center rounded-lg">Komm ins D2 Team</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<section id="hero" class="relative min-h-screen flex items-center justify-center px-4 pt-20">
-  <div class="absolute inset-0 hero-glow"></div>
-  <div class="max-w-5xl mx-auto text-center relative z-10">
-    <div class="inline-block mb-6 px-4 py-1.5 border border-gold/30 rounded-full">
-      <p class="text-gold text-xs md:text-sm font-semibold tracking-wider">SWISSLIFE SELECT VERTRIEBSPARTNER</p>
-    </div>
-    <img src="logo-d2-gold.PNG" alt="D² Team Logo" class="w-28 h-auto md:w-40 mx-auto mb-6">
-    <h1 class="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black mb-6 leading-none"><span class="text-white">D2</span> <span class="text-gold">TEAM</span></h1>
-    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold mb-4">Zwei Dennis. Ein Team für dein Geld.</h2>
-    <p class="text-lg md:text-xl text-zinc-300 mb-3">Abpfiff ist nicht das Ende.</p>
-    <p class="text-lg md:text-xl text-zinc-300 mb-10">Wir sichern dein Spiel danach. <span class="text-gold font-bold">1000€ für deinen Verein.</span></p>
-    <div class="flex flex-col sm:flex-row gap-4 justify-center">
-      <a href="#check" class="px-8 py-4 bg-gold text-black font-bold text-lg rounded-lg btn-gold">Komm ins D2 Team</a>
-      <a href="#team" class="px-8 py-4 border-2 border-gold text-gold font-bold text-lg rounded-lg hover:bg-gold hover:text-black transition">Wer sind wir</a>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- TEAM -->
-<section id="team" class="py-20 md:py-32 px-4">
-  <div class="max-w-6xl mx-auto">
-    <div class="text-center mb-16"><h2 class="text-4xl md:text-6xl font-black mb-4">DAS <span class="text-gold">D2 TEAM</span></h2><p class="text-zinc-400 text-lg">Zwei Kämpfer. Eine Mission.</p></div>
-    <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-      <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-8 md:p-10 card-hover">
-        <img src="dennis-rosenburg.JPG" alt="Dennis Rosenburg" class="w-24 h-24 rounded-full object-cover border-2 border-gold mb-6">
-        <h3 class="text-3xl font-black mb-3">Dennis Rosenburg</h3>
-        <p class="text-gold font-semibold mb-4">Der Taktiker.</p>
-        <p class="text-zinc-300">Kennt das Spiel. Spielt für dich.</p>
-        <p class="text-zinc-300 mt-2">Finanzen sind Team-Sache.</p>
-      </div>
-      <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-8 md:p-10 card-hover">
-        <img src="dennis-tomen.PNG" alt="Dennis Tomen" class="w-24 h-24 rounded-full object-cover border-2 border-gold mb-6">
-        <h3 class="text-3xl font-black mb-3">Dennis Tomen</h3>
-        <p class="text-gold font-semibold mb-4">Der Stratege.</p>
-        <p class="text-zinc-300">Denkt voraus. Sichert dein Spiel.</p>
-        <p class="text-zinc-300 mt-2">Dein Geld. Dein Sieg.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="section-divider"></div>
-
-<!-- ABWEHR -->
-<section id="abwehr" class="py-20 md:py-32 px-4 bg-zinc-950/50"><div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-  <div><div class="inline-block mb-4 px-4 py-1.5 bg-gold/10 border border-gold/30 rounded-full"><p class="text-gold text-sm font-semibold">D2 ABWEHR</p></div>
-  <h2 class="text-4xl md:text-6xl font-black mb-6">Ohne Abwehr<br>verlierst du.</h2>
-  <p class="text-xl text-zinc-300 mb-8">Ohne BU verlierst du alles.</p>
-  <a href="#check" class="inline-block px-8 py-4 bg-gold text-black font-bold rounded-lg btn-gold">Abwehr checken</a></div>
-  <div class="aspect-square bg-gradient-to-br from-zinc-900 to-black border border-gold/20 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-shield-halved text-9xl text-gold/20"></i></div>
-</div></section>
-
-<div class="section-divider"></div>
-
-<!-- MITTELFELD -->
-<section id="mittelfeld" class="py-20 md:py-32 px-4"><div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-  <div class="order-2 lg:order-1"><div class="aspect-square bg-gradient-to-br from-zinc-900 to-black border border-gold/20 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-chart-line text-9xl text-gold/20"></i></div></div>
-  <div class="order-1 lg:order-2"><div class="inline-block mb-4 px-4 py-1.5 bg-gold/10 border border-gold/30 rounded-full"><p class="text-gold text-sm font-semibold">D2 MITTELFELD</p></div>
-  <h2 class="text-4xl md:text-6xl font-black mb-6">Das Mittelfeld<br>hält den Laden.</h2>
-  <p class="text-xl text-zinc-300 mb-8">Genau wie dein Vermögen.</p>
-  <a href="#check" class="inline-block px-8 py-4 bg-gold text-black font-bold rounded-lg btn-gold">Mittelfeld stärken</a></div>
-</div></section>
-
-<div class="section-divider"></div>
-
-<!-- STURM -->
-<section id="sturm" class="py-20 md:py-32 px-4 bg-zinc-950/50"><div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-  <div><div class="inline-block mb-4 px-4 py-1.5 bg-gold/10 border border-gold/30 rounded-full"><p class="text-gold text-sm font-semibold">D2 STURM</p></div>
-  <h2 class="text-4xl md:text-6xl font-black mb-6">Im Sturm<br>machst du Buden.</h2>
-  <p class="text-xl text-zinc-300 mb-8">Im Sturm machst du Vermögen.</p>
-  <a href="#check" class="inline-block px-8 py-4 bg-gold text-black font-bold rounded-lg btn-gold">Sturm starten</a></div>
-  <div class="aspect-square bg-gradient-to-br from-zinc-900 to-black border border-gold/20 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-futbol text-9xl text-gold/20"></i></div>
-</div></section>
-
-<div class="section-divider"></div>
-
-<!-- D2 CHECK – MIT ECHTEM FORMULAR -->
-<section id="check" class="py-20 md:py-32 px-4">
-  <div class="max-w-4xl mx-auto">
-    <div class="text-center mb-12">
-      <div class="inline-block mb-4 px-4 py-1.5 bg-gold/10 border border-gold/30 rounded-full"><p class="text-gold text-sm font-semibold">D2 CHECK</p></div>
-      <h2 class="text-4xl md:text-6xl font-black mb-6">Wir grätschen <span class="text-gold">teure Verträge</span> ab.</h2>
-      <p class="text-xl text-zinc-300">Vertragsvergleich. Kostenlos. Klar.</p>
-    </div>
-
-    <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-6 md:p-10">
-      <!-- KONTAKTFORMULAR -->
-      <form action="https://formsubmit.co/dennis.rosenburg@swisslife-select.de" method="POST" class="space-y-6">
-        <input type="hidden" name="_subject" value="Neue D2 Check Anfrage">
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_template" value="table">
-        <input type="hidden" name="_next" value="danke.html">
-        <input type="text" name="_honey" style="display:none">
-
-        <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <label for="name" class="block text-sm font-semibold mb-2">Name *</label>
-            <input type="text" id="name" name="Name" required class="w-full px-4 py-3 bg-black border border-zinc-800 rounded-lg focus:border-gold focus:outline-none text-white">
-          </div>
-          <div>
-            <label for="email" class="block text-sm font-semibold mb-2">E-Mail *</label>
-            <input type="email" id="email" name="E-Mail" required class="w-full px-4 py-3 bg-black border border-zinc-800 rounded-lg focus:border-gold focus:outline-none text-white">
-          </div>
+<body>
+    <video autoplay muted loop playsinline class="video-bg">
+        <source src="Dennis-bg.MP4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="header">
+            <img src="logo.PNG" alt="Versteh DeinGeld" class="logo">
+            <p class="logo-text gold">HOL DIR DEINEN FINANZ-TÜV</p>
+            <!-- FINETUNING: "01.07." raus -->
+            <p class="badge">Ich bin unabhängiger Berater für Privatkunden und Selbstständige | Mein Verdienst ist deine Empfehlung!</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <label for="phone" class="block text-sm font-semibold mb-2">Telefon</label>
-            <input type="tel" id="phone" name="Telefon" class="w-full px-4 py-3 bg-black border border-zinc-800 rounded-lg focus:border-gold focus:outline-none text-white">
-          </div>
-          <div>
-            <label for="club" class="block text-sm font-semibold mb-2">Verein</label>
-            <input type="text" id="club" name="Verein" class="w-full px-4 py-3 bg-black border border-zinc-800 rounded-lg focus:border-gold focus:outline-none text-white">
-          </div>
+        <div class="hero">
+            <h2>Sei dabei und hol dir meinen <span class="gold">Gratis Finanz-TÜV</span></h2>
+            <p>Seit 2010 bin ich im Bankwesen – von der Ausbildung bei der Volksbank, über Jahre als Privatkundenberater und stellv. Filialleiter aktiv, bis zum Filialleiter ab 2019. Ich vergleiche für dich 500+ Versicherer & 8000 ETFs und Anlagemöglichkeiten und berate dich unabhängig zu Altersvorsorge & Immobilien – auf Augenhöhe.</p>
+            <p style="margin-bottom: 28px;">Trag dich jetzt ein und du bekommst den Finanz-TÜV als einer der Ersten zugeschickt.</p>
+            
+            <form id="wartelisteForm" action="https://formsubmit.co/investdero@gmail.com" method="POST">
+                <input type="hidden" name="_next" value="https://verstehdeingeld.de/danke.html">
+                <input type="hidden" name="_subject" value="Neuer Finanz-TÜV Lead!">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                
+                <div class="form-group"><input type="text" name="name" placeholder="Dein Vorname" required></div>
+                <div class="form-group"><input type="email" name="email" placeholder="Deine beste E-Mail"></div>
+                <div class="form-group"><input type="tel" name="phone" placeholder="Deine Handynummer für WhatsApp"></div>
+                <p class="form-hint">Bitte E-Mail oder Handynummer angeben</p>
+                
+                <!-- FINETUNING: Social Proof -->
+                <p class="social-proof">
+                    ✓ <strong style="color: #FFD700;">Heute schon <span id="dl-counter">37</span>x angefordert</strong> – 100% kostenlos & unverbindlich
+                </p>
+                
+                <!-- FINETUNING: DSGVO-Checkbox -->
+                <label class="dsgvo-checkbox">
+                    <input type="checkbox" name="datenschutz" required>
+                    Ich stimme der Verarbeitung meiner Daten gemäß der <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> zu. Ich kann mich jederzeit abmelden.
+                </label>
+                
+                <button type="submit">🚀 Jetzt kostenlos Finanz-TÜV sichern</button>
+                <p class="trust">Kein Spam. Nur 1 Nachricht mit allgemeinem Finanz-TÜV + wir besprechen dann gerne deinen persönlicher TÜV.</p>
+            </form>
         </div>
-        <div>
-          <label for="topic" class="block text-sm font-semibold mb-2">Was prüfen?</label>
-          <select id="topic" name="Thema" class="w-full px-4 py-3 bg-black border border-zinc-800 rounded-lg focus:border-gold focus:outline-none text-white">
-            <option value="Nicht angegeben">Bitte wählen</option>
-            <option value="D2 Abwehr - BU">D2 Abwehr - BU</option>
-            <option value="D2 Mittelfeld - ETF">D2 Mittelfeld - ETF</option>
-            <option value="D2 Sturm - Immobilien">D2 Sturm - Immobilien</option>
-            <option value="Alles checken">Alles checken</option>
-          </select>
+        <div class="bereiche">
+            <h2>Was dich erwartet: <span class="gold">Diese 7 Bereiche</span> checke ich für dich</h2>
+            <div class="grid">
+                <div class="karte"><span class="icon">🛡️</span><h3>VERSICHERUNGEN</h3><p>Zahl ich zu viel?</p></div>
+                <div class="karte"><span class="icon">🏥</span><h3>KRANKENVERSICHERUNG</h3><p>GKV oder PKV?</p></div>
+                <div class="karte"><span class="icon">💼</span><h3>BERUFSUNFÄHIGKEIT</h3><p>Bin ich geschützt?</p></div>
+                <div class="karte"><span class="icon">🏠</span><h3>EIGENHEIM</h3><p>Was kann ich mir leisten?</p></div>
+                <div class="karte"><span class="icon">📈</span><h3>GELDANLAGE</h3><p>Arbeitet mein Geld für mich?</p></div>
+                <div class="karte"><span class="icon">👴</span><h3>ALTERSVORSORGE</h3><p>Reicht meine Rente später?</p></div>
+                <div class="karte"><span class="icon">🔑</span><h3>IMMOBILIENVERMITTLUNG</h3><p>Kaufen, verkaufen oder finanzieren?</p></div>
+            </div>
         </div>
-        <div>
-          <label for="message" class="block text-sm font-semibold mb-2">Nachricht</label>
-          <textarea id="message" name="Nachricht" rows="4" class="w-full px-4 py-3 bg-black border border-zinc-800 rounded-lg focus:border-gold focus:outline-none text-white resize-none"></textarea>
+        <div class="footer">
+            <!-- FINETUNING: "Ab 01.07." raus -->
+            <p><strong>Dennis Rosenburg | Finanzberater bei SwissLife Select</strong></p>
+            <p style="margin: 14px 0; line-height: 1.6;">IHK-Zulassung §34d GewO, §34f GewO, §34i GewO & §34c GewO in Beantragung. Erstinformation auf Anfrage.</p>
+            <a href="https://wa.me/491725693073?text=Hi%20Dennis,%20ich%20hab%20mich%20für%20den%20Finanz-TÜV%20eingetragen" class="whatsapp">💬 WhatsApp: Direkte Frage stellen</a>
         </div>
-        <div class="flex items-start gap-3">
-          <input type="checkbox" id="privacy" name="Datenschutz-Zustimmung" value="Ja" required class="mt-1 w-5 h-5 bg-black border-zinc-800 rounded accent-gold">
-          <label for="privacy" class="text-sm text-zinc-400">
-            Ich habe die <a href="datenschutz.html" target="_blank" class="text-gold underline hover:text-yellow-400">Datenschutzerklärung</a> gelesen und stimme der Verarbeitung meiner Daten zur Bearbeitung der Anfrage zu. *
-          </label>
-        </div>
-        <button type="submit" class="w-full px-8 py-4 bg-gold text-black font-bold text-lg rounded-lg btn-gold">
-          Jetzt Check starten
-        </button>
-        <p class="text-xs text-zinc-500 text-center">Mit Absenden stimmst du der Verarbeitung gem. Art. 6 Abs. 1 lit. b DSGVO zu. Kein Spam.</p>
-      </form>
     </div>
-  </div>
-</section>
+    
+    <script>
+        document.getElementById('wartelisteForm').addEventListener('submit', function(e) {
+            var email = this.querySelector('input[name="email"]').value.trim();
+            var phone = this.querySelector('input[name="phone"]').value.trim();
+            if (!email && !phone) {
+                e.preventDefault();
+                alert('Bitte gib deine E-Mail oder Handynummer an.');
+                return false;
+            }
+        });
+        
+        // FINETUNING: Social Proof Counter
+        let dlCount = 37;
+        document.getElementById('dl-counter').innerText = dlCount;
+        setInterval(() => {
+            dlCount += Math.floor(Math.random() * 2) + 1;
+            document.getElementById('dl-counter').innerText = dlCount;
+        }, Math.random() * 180000 + 120000);
+    </script>
+    
+<!-- Footer -->
+<footer style="background: #000000; color: #ffffff; padding: 40px 20px; text-align: center; font-size: 14px; margin-top: 60px; border-top: 2px solid #f59e0b;">
+    <div style="max-width: 800px; margin: 0 auto;">
+        <p style="margin-bottom: 20px; font-size: 18px; color: #ffffff; font-weight: bold;">
+            DENNIS ROSENBURG – <span style="color: #f59e0b;">VERSTEH DEIN GELD</span>
+        </p>
+        
+        <p style="margin-bottom: 25px;">
+            <a href="impressum.html" style="color: #ffffff; text-decoration: none; margin: 0 15px; transition: 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#ffffff'">Impressum</a>
+            <span style="color: #f59e0b;">|</span> 
+            <a href="datenschutz.html" style="color: #ffffff; text-decoration: none; margin: 0 15px; transition: 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#ffffff'">Datenschutz</a>
+            <span style="color: #f59e0b;">|</span> 
+            <a href="https://wa.me/491725693073" target="_blank" style="color: #ffffff; text-decoration: none; margin: 0 15px; transition: 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#ffffff'">WhatsApp</a>
+            <span style="color: #f59e0b;">|</span> 
+            <a href="https://www.instagram.com/dennis.rosenburg.sls" target="_blank" style="color: #ffffff; text-decoration: none; margin: 0 15px; transition: 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#ffffff'">Instagram</a>
+        </p>
 
-<div class="section-divider"></div>
-
-<!-- BONUS -->
-<section id="bonus" class="py-20 md:py-32 px-4 bg-gradient-to-b from-zinc-950/50 to-black">
-  <div class="max-w-6xl mx-auto text-center">
-    <div class="inline-block mb-4 px-4 py-1.5 bg-gold/10 border border-gold/30 rounded-full"><p class="text-gold text-sm font-semibold">D2 VEREINSBONUS</p></div>
-    <h2 class="text-4xl md:text-7xl font-black mb-6"><span class="text-gold">1000€</span> für dein Team.</h2>
-    <a href="#check" class="inline-block mt-8 px-10 py-5 bg-gold text-black font-bold text-xl rounded-lg btn-gold">Team anmelden</a>
-  </div>
-</section>
-
-<!-- FOOTER MIT RECHTSLINKS -->
-<footer class="py-12 md:py-16 px-4 bg-zinc-950 border-t border-zinc-900">
-  <div class="max-w-6xl mx-auto">
-    <div class="grid md:grid-cols-3 gap-12 mb-12">
-      <div>
-        <div class="flex items-center gap-3 mb-6">
-          <img src="logo-d2-gold.PNG" alt="D² Team" class="h-10 w-auto">
-          <span class="font-montserrat font-black text-2xl">TEAM</span>
-        </div>
-        <p class="text-zinc-400 text-sm mb-2">Dennis Rosenburg & Dennis Tomen</p>
-        <p class="text-zinc-400 text-sm">SwissLife Select Vertriebspartner</p>
-      </div>
-      <div>
-        <h4 class="font-montserrat font-bold text-lg mb-6">Kicken</h4>
-        <ul class="space-y-3 text-sm text-zinc-400">
-          <li><a href="#abwehr" class="hover:text-gold">D2 Abwehr</a></li>
-          <li><a href="#mittelfeld" class="hover:text-gold">D2 Mittelfeld</a></li>
-          <li><a href="#sturm" class="hover:text-gold">D2 Sturm</a></li>
-          <li><a href="#check" class="hover:text-gold">D2 Check</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4 class="font-montserrat font-bold text-lg mb-6">Kontakt</h4>
-        <ul class="space-y-3 text-zinc-400 text-sm">
-          <li><i class="fa-solid fa-envelope text-gold mr-2"></i>dennis.rosenburg@swisslife-select.de</li>
-          <li><i class="fa-solid fa-envelope text-gold mr-2"></i>dennis.tomen@swisslife-select.de</li>
-          <li><a href="impressum.html" class="hover:text-gold">Impressum</a></li>
-          <li><a href="datenschutz.html" class="hover:text-gold">Datenschutz</a></li>
-        </ul>
-      </div>
+        <!-- FINETUNING: "keine Vermittlung vor 07/2026" raus -->
+        <p style="font-size: 12px; color: #999; margin-top: 25px; line-height: 1.6;">
+            © 2026 Dennis Rosenburg. Alle Rechte vorbehalten.<br>
+            <span style="color: #f59e0b;">Kostenlose Erstinformation</span> – unverbindlich & unabhängig.
+        </p>
     </div>
-    <div class="section-divider mb-8"></div>
-    <div class="flex flex-wrap gap-4 text-xs text-zinc-500 justify-center md:justify-start mb-6">
-      <a href="impressum.html" class="hover:text-gold">Impressum</a>
-      <span>•</span>
-      <a href="datenschutz.html" class="hover:text-gold">Datenschutz</a>
-    </div>
-    <div class="text-xs text-zinc-500 leading-relaxed space-y-2">
-      <p class="font-semibold text-zinc-400">Wichtiger Hinweis:</p>
-      <p>SwissLife Select ist ein Versicherungsmakler nach § 34d GewO. Keine Anlageberatung im Sinne des WpHG. Verträge kommen mit Produktpartnern zustande. D2 Team erhält hierfür Provisionen. Kapitalanlagen bergen Verlustrisiken. BU-Versicherung mit Gesundheitsprüfung und Bedingungen.</p>
-      <p class="pt-2">© 2024 D2 Team – Dennis Rosenburg & Dennis Tomen</p>
-    </div>
-  </div>
 </footer>
-
-<script>
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileMenu = document.getElementById('mobile-menu');
-  mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
-  document.querySelectorAll('#mobile-menu a').forEach(link => { link.addEventListener('click', () => mobileMenu.classList.add('hidden')); });
-</script>
 </body>
 </html>
