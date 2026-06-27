@@ -42,6 +42,36 @@
         h1, h2, h3, button { font-family: 'Montserrat', sans-serif; }
         .gold { color: #FFD700; }
         .container { max-width: 720px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
+
+        /* --- Top-Navigation --- */
+        .topnav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10,10,10,0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255,215,0,0.15);
+            display: flex;
+            justify-content: center;
+            gap: 28px;
+            padding: 12px 20px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 14px;
+        }
+        .topnav a {
+            color: #d4d4d4;
+            text-decoration: none;
+            transition: color 0.2s;
+            letter-spacing: 0.3px;
+        }
+        .topnav a:hover { color: #FFD700; }
+        .topnav .nav-sep { color: rgba(255,215,0,0.4); }
+        @media (max-width: 480px) {
+            .topnav { gap: 14px; font-size: 12px; padding: 10px 12px; flex-wrap: wrap; }
+        }
+        /* --- Ende Navigation --- */
+
         .header { text-align: center; padding: 50px 20px 30px; }
         .logo { width: 280px; height: auto; margin: 0 auto 15px; display: block; filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.4)); }
         .logo-text { font-size: 16px; letter-spacing: 4px; font-weight: 800; margin-bottom: 8px; }
@@ -78,6 +108,15 @@
     </style>
 </head>
 <body>
+    <!-- Top-Navigation -->
+    <nav class="topnav">
+        <a href="/">Startseite</a>
+        <span class="nav-sep">|</span>
+        <a href="/d2/">Für Vereinsfreunde</a>
+        <span class="nav-sep">|</span>
+        <a href="/yachtversicherung.html">Für Yachtingfreunde</a>
+    </nav>
+
     <video autoplay muted loop playsinline class="video-bg">
         <source src="Dennis-bg.MP4" type="video/mp4">
     </video>
@@ -131,7 +170,6 @@
                 <div class="karte"><span class="icon">👴</span><h3>ALTERSVORSORGE</h3><p>Reicht meine Rente später?</p></div>
                 <div class="karte"><span class="icon">🔑</span><h3>IMMOBILIENVERMITTLUNG</h3><p>Kaufen, verkaufen oder finanzieren?</p></div>
             </div>
-        </div>
         <div class="footer">
             <!-- FINETUNING: "Ab 01.07." raus -->
             <p><strong>Dennis Rosenburg | Finanzberater bei SwissLife Select</strong></p>
