@@ -91,7 +91,7 @@
             position: fixed; 
             bottom: 24px; 
             right: 24px; 
-            z-index: 999999; 
+            z-index: 999; 
             background: #25D366; 
             width: 60px; 
             height: 60px; 
@@ -203,6 +203,84 @@
             section { padding: 40px 0; }
             .gaps-grid { grid-template-columns: 1fr; }
         }
+
+        /* --- Burger Menü --- */
+        .burger-btn {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            z-index: 2000;
+            background: rgba(17,17,17,0.9);
+            border: 1px solid rgba(201,169,97,0.3);
+            border-radius: 10px;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: all 0.2s;
+        }
+        .burger-btn:hover { border-color: #C9A961; }
+        .burger-btn span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #C9A961;
+            border-radius: 2px;
+            transition: all 0.25s;
+        }
+        .burger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .burger-btn.open span:nth-child(2) { opacity: 0; }
+        .burger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            max-width: 85vw;
+            height: 100%;
+            background: rgba(10,10,10,0.97);
+            backdrop-filter: blur(12px);
+            border-left: 1px solid rgba(201,169,97,0.2);
+            z-index: 1999;
+            padding: 90px 30px 30px;
+            transition: right 0.3s ease;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.5);
+        }
+        .mobile-nav.open { right: 0; }
+        .mobile-nav a {
+            display: block;
+            color: #d4d4d4;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 17px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            transition: color 0.2s;
+        }
+        .mobile-nav a:hover { color: #C9A961; }
+        .mobile-nav .nav-label {
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        .nav-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1998;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .nav-backdrop.open { opacity: 1; pointer-events: all; }
     </style>
     
     <!-- Schema.org -->
@@ -221,6 +299,18 @@
     </script>
 </head>
 <body>
+<!-- Burger Menü -->
+<button class="burger-btn" id="burgerBtn" aria-label="Menü öffnen">
+    <span></span><span></span>
+</button>
+<div class="nav-backdrop" id="navBackdrop"></div>
+<nav class="mobile-nav" id="mobileNav">
+    <div class="nav-label">Navigation</div>
+    <a href="/">Startseite</a>
+    <a href="/d2/">Für Vereinsfreunde</a>
+    <a href="/yachtversicherung.html">Für Yachtingfreunde</a>
+</nav>
+
 <!-- Video Background -->
 <div class="video-bg">
   <video autoplay muted loop playsinline>
@@ -324,7 +414,7 @@
 
     <!-- Floating WhatsApp -->
     <a href="https://wa.me/message/NAB5UQOF54WCA1" target="_blank" class="btn-floating">
-        <svg width="32" height="32" viewBox="0 0 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.333 0 2.35.618 4.642 1.794 6.663L2.667 29.333l6.833-1.792c1.936 1.06 4.127 1.622 6.391 1.623h.003c7.363 0 13.334-5.97 13.334-13.334C29.328 8.637 23.364 2.667 16.001 2.667zm7.733 19.207c-.333.933-1.967 1.783-2.71 1.897-.684.107-1.553.152-2.503-.157-.577-.188-1.317-.43-2.267-.842-3.986-1.722-6.587-5.762-6.787-6.028-.2-.267-1.633-2.167-1.633-4.133 0-1.967 1.033-2.933 1.4-3.333.367-.4.8-.5 1.067-.5.267 0 .533.002.767.014.247.012.577-.093.903.687.333.8 1.133 2.767 1.233 2.967.1.2.167.433.033.7-.133.267-.2.433-.4.667-.2.233-.42.52-.6.7-.2.2-.407.42-.173.82.233.4 1.037 1.71 2.227 2.77 1.533 1.367 2.827 1.792 3.227 1.992.4.2.633.167.867-.1.233-.267 1-1.167 1.267-1.567.267-.4.533-.333.9-.2.367.133 2.32 1.094 2.72 1.294.4.2.667.3.767.467.1.167.1.967-.233 1.9z" fill="#fff"/>
         </svg>
     </a>
@@ -342,6 +432,21 @@
             <p style="margin-top: 20px; font-size: 12px;">© 2026 VerstehDeinGeld</p>
         </div>
     </footer>
+
+<script>
+// Burger Menü
+const burgerBtn = document.getElementById('burgerBtn');
+const mobileNav = document.getElementById('mobileNav');
+const navBackdrop = document.getElementById('navBackdrop');
+function toggleNav() {
+    burgerBtn.classList.toggle('open');
+    mobileNav.classList.toggle('open');
+    navBackdrop.classList.toggle('open');
+    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+}
+burgerBtn.addEventListener('click', toggleNav);
+navBackdrop.addEventListener('click', toggleNav);
+</script>
 
 </body>
 </html>
