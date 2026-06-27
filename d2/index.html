@@ -246,8 +246,7 @@ tailwind.config = {
 
 <div class="section-divider"></div>
 
-<!-- MITTELFELD -->
-<!-- MITTELFELD + ETF-RECHNER mit Chart -->
+<!-- MITTELFELD + ETF-RECHNER mit Chart – FIXED -->
 <section id="mittelfeld" class="py-20 md:py-32 px-4">
 <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
 
@@ -279,7 +278,7 @@ tailwind.config = {
 
     <!-- Chart -->
     <div class="mt-6 bg-zinc-950 border border-zinc-900 rounded-xl p-4">
-      <canvas id="etf-chart" width="600" height="220" class="w-full h-[220px]"></canvas>
+      <canvas id="etf-chart" style="width:100%;height:220px;display:block"></canvas>
       <div class="flex justify-between text-xs text-zinc-500 mt-1 px-1">
         <span>Start</span>
         <span id="etf-chart-mid">Jahr 12</span>
@@ -312,49 +311,52 @@ tailwind.config = {
   const $ = id => document.getElementById(id);
   const sEl = $('etf-start'), rEl = $('etf-rate'), yEl = $('etf-years'), pEl = $('etf-rendite');
   const canvas = $('etf-chart');
-  if(!sEl ||!canvas) return;
+  if(!sEl || !canvas) return;
   const ctx = canvas.getContext('2d');
 
-  function drawChart(values){
-    const w = canvas.width, h = canvas.height;
-    const pad = {l:40, r:20, t:20, b:30};
+  function resizeCanvas(){
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    return {w: rect.width, h: rect.height};
+  }
+
+  function drawChart(values, w, h){
+    const pad = {l:45, r:15, t:15, b:25};
     ctx.clearRect(0,0,w,h);
-    // bg grid
-    ctx.strokeStyle = '#27272a';
-    ctx.lineWidth = 1;
+    // grid
+    ctx.strokeStyle = '#27272a'; ctx.lineWidth = 1;
     for(let i=0;i<=4;i++){
       const y = pad.t + (h-pad.t-pad.b) * i/4;
       ctx.beginPath(); ctx.moveTo(pad.l, y); ctx.lineTo(w-pad.r, y); ctx.stroke();
     }
     const max = Math.max(...values, 1);
-    const n = values.length-1;
-    // filled area
+    const n = values.length-1 || 1;
+    // area
     ctx.beginPath();
     ctx.moveTo(pad.l, h-pad.b);
     values.forEach((v,i)=>{
       const x = pad.l + (w-pad.l-pad.r) * i/n;
       const y = h-pad.b - (h-pad.t-pad.b) * (v/max);
-      if(i===0) ctx.lineTo(x,y); else ctx.lineTo(x,y);
+      ctx.lineTo(x,y);
     });
     ctx.lineTo(pad.l + (w-pad.l-pad.r), h-pad.b);
     ctx.closePath();
     ctx.fillStyle = 'rgba(212,175,55,0.08)';
     ctx.fill();
-    // gold line
+    // line
     ctx.beginPath();
     values.forEach((v,i)=>{
       const x = pad.l + (w-pad.l-pad.r) * i/n;
       const y = h-pad.b - (h-pad.t-pad.b) * (v/max);
-      i===0? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+      i===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
     });
-    ctx.strokeStyle = '#D4AF37';
-    ctx.lineWidth = 2.5;
-    ctx.stroke();
+    ctx.strokeStyle = '#D4AF37'; ctx.lineWidth = 2.5; ctx.stroke();
     // y labels
-    ctx.fillStyle = '#71717a';
-    ctx.font = '11px Inter';
-    ctx.textAlign = 'right';
-    [0, max/2, max].forEach((v,i)=>{
+    ctx.fillStyle = '#71717a'; ctx.font = '11px Inter'; ctx.textAlign = 'right';
+    [0, max/2, max].forEach(v=>{
       const y = h-pad.b - (h-pad.t-pad.b) * (v/max);
       ctx.fillText(Math.round(v/1000)+'k €', pad.l-6, y+4);
     });
@@ -381,22 +383,14 @@ tailwind.config = {
     $('etf-gewinn').textContent = Math.round(gewinn).toLocaleString('de-DE') + ' €';
     $('etf-chart-mid').textContent = 'Jahr ' + Math.floor(years/2);
     $('etf-chart-end').textContent = 'Jahr ' + years;
-    drawChart(yearlyValues);
+    const {w,h} = resizeCanvas();
+    drawChart(yearlyValues, w, h);
   }
   [sEl,rEl,yEl,pEl].forEach(el=>el.addEventListener('input', calc));
+  window.addEventListener('resize', calc);
   calc();
-  // responsive canvas
-  const ro = new ResizeObserver(()=>{
-    const rect = canvas.getBoundingClientRect();
-    canvas.width = rect.width * 2;
-    canvas.height = 220 * 2;
-    ctx.setTransform(2,0,0,2,0,0);
-    calc();
-  });
-  ro.observe(canvas.parentElement);
 })();
 </script>
-
 <!-- STURM -->
 <section id="sturm" class="py-20 md:py-32 px-4 bg-zinc-950/50"><div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
   <div><div class="inline-block mb-4 px-4 py-1.5 bg-gold/10 border border-gold/30 rounded-full"><p class="text-gold text-sm font-semibold">D2 STURM</p></div>
