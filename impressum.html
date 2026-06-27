@@ -1,29 +1,123 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-    <meta charset="UTF-8">
-    <title>Impressum - Versteh dein Geld</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impressum | VerstehDeinGeld</title>
+<link rel="icon" href="logo-d2-gold.PNG" type="image/png">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { gold: '#D4AF37', black: '#000000' },
+      fontFamily: { montserrat: ['Montserrat', 'sans-serif'], inter: ['Inter', 'sans-serif'] }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+  html { scroll-behavior: smooth; }
+  body { background:#000; font-family:'Inter',sans-serif; }
+  h1,h2 { font-family:'Montserrat',sans-serif; font-weight:800; }
+  .text-gold{color:#D4AF37}.bg-gold{background-color:#D4AF37}.border-gold{border-color:#D4AF37}
+  .nav-blur{backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+</style>
 </head>
-<body style="font-family: Arial; max-width: 800px; margin: 40px auto; padding: 20px;">
-    <h1>Impressum</h1>
-    <p><strong>Angaben gemäß § 5 TMG</strong></p>
-    <p>
-        Dennis Rosenburg<br>
-        Wagnerweg 17 <br>
-        31319 Sehnde<br>
-    </p>
-    <p><strong>Kontakt:</strong><br>
-        Telefon: +49 172 5693073<br>
-        E-Mail: dennis.rosenburg@swisslife-select.de
-    </p>
-    <p><strong>Berufsbezeichnung:</strong><br>
-        Bankkaufmann (IHK) – Versicherungsfachmann in Vorbereitung<br>
-        Zuständige IHK: IHK Hannover
-    </p>
-    <p><strong>Berufshaftpflichtversicherung:</strong><br>
-        Gothaer Versicherungen]<br>
-        Personen-, Sach- und Vermögensschäden <br>
-    </p>
-    <a href="index.html">← Zurück zur Startseite</a>
+<body class="text-white overflow-x-hidden">
+
+<!-- NAV -->
+<nav class="fixed w-full z-50 bg-black/80 nav-blur border-b border-zinc-900">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16 md:h-20">
+      <a href="/" class="flex items-center gap-3">
+        <span class="font-montserrat font-black text-xl">VERSTEH<span class="text-gold">DEINGELD</span></span>
+      </a>
+      <div class="hidden lg:flex items-center gap-8">
+        <a href="/" class="text-sm font-medium hover:text-gold transition">Startseite</a>
+        <a href="/d2/" class="text-sm font-medium hover:text-gold transition">D2 Team</a>
+        <a href="/yachtversicherung.html" class="text-sm font-medium hover:text-gold transition">Yachting</a>
+      </div>
+      <button id="mobile-menu-btn" class="lg:hidden text-white" aria-label="Menü öffnen"><i class="fa-solid fa-bars text-2xl"></i></button>
+    </div>
+  </div>
+  <div id="mobile-menu" class="hidden lg:hidden bg-black border-t border-zinc-900">
+    <div class="px-4 py-4 space-y-3">
+      <a href="/" class="block py-2 hover:text-gold">Startseite</a>
+      <a href="/d2/" class="block py-2 hover:text-gold">D2 Team</a>
+      <a href="/yachtversicherung.html" class="block py-2 hover:text-gold">Yachtingfreunde</a>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<main class="pt-32 pb-20 px-4">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl md:text-5xl font-black mb-8">Impressum</h1>
+    
+    <div class="bg-zinc-950 border border-zinc-900 rounded-2xl p-8 md:p-10 space-y-8 text-zinc-300 leading-relaxed">
+      
+      <div>
+        <p class="text-gold font-semibold mb-2">Angaben gemäß § 5 TMG</p>
+        <p>
+          Dennis Rosenburg<br>
+          Wagnerweg 17<br>
+          31319 Sehnde
+        </p>
+      </div>
+
+      <div>
+        <p class="text-gold font-semibold mb-2">Kontakt</p>
+        <p>
+          Telefon: +49 172 5693073<br>
+          E-Mail: dennis.rosenburg@swisslife-select.de
+        </p>
+      </div>
+
+      <div>
+        <p class="text-gold font-semibold mb-2">Berufsbezeichnung</p>
+        <p>
+          Bankkaufmann (IHK) – Versicherungsfachmann in Vorbereitung<br>
+          Zuständige IHK: IHK Hannover
+        </p>
+      </div>
+
+      <div>
+        <p class="text-gold font-semibold mb-2">Berufshaftpflichtversicherung</p>
+        <p>
+          Gothaer Versicherungen<br>
+          Personen-, Sach- und Vermögensschäden
+        </p>
+      </div>
+
+    </div>
+
+    <a href="/" class="inline-block mt-8 text-gold hover:text-yellow-400 transition">← Zurück zur Startseite</a>
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer class="py-12 px-4 bg-zinc-950 border-t border-zinc-900 text-sm text-zinc-400">
+  <div class="max-w-3xl mx-auto flex flex-wrap gap-4 justify-center">
+    <a href="/" class="hover:text-gold">Startseite</a>
+    <span class="text-zinc-700">•</span>
+    <a href="/d2/" class="hover:text-gold">D2 Team</a>
+    <span class="text-zinc-700">•</span>
+    <a href="/yachtversicherung.html" class="hover:text-gold">Yachting</a>
+    <span class="text-zinc-700">•</span>
+    <a href="impressum.html" class="text-gold">Impressum</a>
+    <span class="text-zinc-700">•</span>
+    <a href="datenschutz.html" class="hover:text-gold">Datenschutz</a>
+  </div>
+  <p class="text-center text-zinc-500 text-xs mt-6">© 2026 Dennis Rosenburg – VerstehDeinGeld</p>
+</footer>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+  const mobileMenu = document.getElementById('mobile-menu');
+  mobileMenuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+</script>
 </body>
 </html>
