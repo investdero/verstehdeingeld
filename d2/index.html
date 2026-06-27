@@ -575,7 +575,7 @@ tailwind.config = {
 
     <!-- Haus-Visual -->
     <div class="mt-5 bg-zinc-950 border border-zinc-900 rounded-xl p-4 text-center">
-      <img id="immo-house-img" src="haus-2.jpg" alt="Haus" class="w-full h-56 object-cover rounded-lg border border-zinc-800 transition-all duration-500 bg-white">
+      <img id="immo-house-img" src="haus-2.png" alt="Haus" class="w-full h-56 object-cover rounded-lg border border-zinc-800 transition-all duration-500 bg-white">
       <p id="immo-house-label" class="text-gold font-bold mt-3 text-lg">Einfamilienhaus</p>
       <p id="immo-house-range" class="text-zinc-400 text-xs">bis 450.000 €</p>
     </div>
@@ -600,11 +600,11 @@ tailwind.config = {
   const nettoEl=$('immo-netto'), ekEl=$('immo-ek'), sliderEl=$('immo-rate-slider'), zinsEl=$('immo-zins'), tilgEl=$('immo-tilg');
   if(!nettoEl) return;
   const houses = [
-    {img:"haus-1.jpg", label:"Reihenhaus", range:"bis 250.000 €", max:250000},
-    {img:"haus-2.jpg", label:"Einfamilienhaus", range:"bis 450.000 €", max:450000},
-    {img:"haus-3.jpg", label:"Großes Haus", range:"bis 750.000 €", max:750000},
-    {img:"haus-4.jpg", label:"Luxusvilla", range:"bis 1.200.000 €", max:1200000},
-    {img:"haus-5.jpg", label:"Premium-Villa", range:"ab 1.200.000 €", max:999999999}
+    {img:"haus-1.png", label:"Reihenhaus", range:"bis 250.000 €", max:250000},
+    {img:"haus-2.png", label:"Einfamilienhaus", range:"bis 450.000 €", max:450000},
+    {img:"haus-3.png", label:"Großes Haus", range:"bis 750.000 €", max:750000},
+    {img:"haus-4.png", label:"Luxusvilla", range:"bis 1.200.000 €", max:1200000},
+    {img:"haus-5.png", label:"Premium-Villa", range:"ab 1.200.000 €", max:999999999}
   ];
   const houseImg=$('immo-house-img'), houseLabel=$('immo-house-label'), houseRange=$('immo-house-range');
 
