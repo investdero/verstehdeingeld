@@ -114,14 +114,76 @@ tailwind.config = {
 
 <div class="section-divider"></div>
 
-<!-- ABWEHR -->
-<section id="abwehr" class="py-20 md:py-32 px-4 bg-zinc-950/50"><div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-  <div><div class="inline-block mb-4 px-4 py-1.5 bg-gold/10 border border-gold/30 rounded-full"><p class="text-gold text-sm font-semibold">D2 ABWEHR</p></div>
-  <h2 class="text-4xl md:text-6xl font-black mb-6">Ohne Abwehr<br>verlierst du.</h2>
-  <p class="text-xl text-zinc-300 mb-8">Ohne BU verlierst du alles.</p>
-  <a href="#check" class="inline-block px-8 py-4 bg-gold text-black font-bold rounded-lg btn-gold">Abwehr checken</a></div>
-  <div class="aspect-square bg-gradient-to-br from-zinc-900 to-black border border-gold/20 rounded-2xl flex items-center justify-center"><i class="fa-solid fa-shield-halved text-9xl text-gold/20"></i></div>
-</div></section>
+<!-- ABWEHR + BU-RECHNER -->
+<section id="abwehr" class="py-20 md:py-32 px-4 bg-zinc-950/50">
+<div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+  
+  <div>
+    <div class="inline-block mb-4 px-4 py-1.5 bg-gold/10 border border-gold/30 rounded-full"><p class="text-gold text-sm font-semibold">D2 ABWEHR</p></div>
+    <h2 class="text-4xl md:text-6xl font-black mb-6">Ohne Abwehr<br>verlierst du.</h2>
+    <p class="text-xl text-zinc-300 mb-8">Ohne BU verlierst du alles.<br>Rechne deine Lücke in 30 Sekunden.</p>
+    <a href="#check" class="hidden lg:inline-block px-8 py-4 bg-gold text-black font-bold rounded-lg btn-gold">Abwehr checken</a>
+  </div>
+
+  <!-- BU-RECHNER -->
+  <div class="bg-black border border-gold/20 rounded-2xl p-6 md:p-8">
+    <h3 class="text-2xl font-black mb-6">BU-Lückenrechner</h3>
+    
+    <div class="space-y-5 text-sm">
+      <div>
+        <label class="block font-semibold mb-2 text-zinc-300">Dein Alter</label>
+        <input type="number" id="bu-age" value="32" min="18" max="63" class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-lg focus:border-gold focus:outline-none text-white">
+      </div>
+      <div>
+        <label class="block font-semibold mb-2 text-zinc-300">Netto-Einkommen / Monat</label>
+        <input type="number" id="bu-netto" value="2800" min="0" step="100" class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-lg focus:border-gold focus:outline-none text-white">
+      </div>
+      <div>
+        <label class="block font-semibold mb-2 text-zinc-300">Bestehende BU-Rente / Monat <span class="text-zinc-500 font-normal">(0 wenn keine)</span></label>
+        <input type="number" id="bu-bestehend" value="0" min="0" step="100" class="w-full px-4 py-3 bg-zinc-950 border border-zinc-800 rounded-lg focus:border-gold focus:outline-none text-white">
+      </div>
+    </div>
+
+    <div id="bu-result" class="mt-6 bg-zinc-950 border border-zinc-900 rounded-xl p-5">
+      <div class="flex justify-between text-zinc-400 text-sm mb-2"><span>Deine Versorgungslücke</span><span id="bu-gap" class="text-white font-bold text-lg">– €</span></div>
+      <div class="flex justify-between text-zinc-400 text-sm mb-2"><span>Empfohlene BU-Rente</span><span id="bu-rente" class="text-gold font-black text-lg">– €</span></div>
+      <div class="flex justify-between text-zinc-400 text-sm"><span>Grober Monatsbeitrag*</span><span id="bu-beitrag" class="text-white font-bold">– €</span></div>
+      <p class="text-xs text-zinc-500 mt-4">* Unverbindliche Schätzung nach Alter/Berufsgruppe. Keine Beratung im Sinne des VVG. Konkretes Angebot nach Gesundheitsprüfung.</p>
+    </div>
+
+    <a href="#check" class="block w-full mt-4 px-6 py-4 bg-gold text-black font-bold text-center rounded-lg btn-gold">Lücke schließen – kostenlos checken</a>
+  </div>
+
+</div>
+</section>
+
+<script>
+(function(){
+  const ageEl = document.getElementById('bu-age');
+  const nettoEl = document.getElementById('bu-netto');
+  const bestEl = document.getElementById('bu-bestehend');
+  if(!ageEl) return;
+  function calc(){
+    const age = parseInt(ageEl.value)||30;
+    const netto = parseFloat(nettoEl.value)||0;
+    const best = parseFloat(bestEl.value)||0;
+    const ziel = netto * 0.8;
+    const luecke = Math.max(0, ziel - best);
+    const rente = Math.ceil(luecke/50)*50;
+    let factor = 0.035;
+    if(age <= 30) factor = 0.025;
+    else if(age <= 40) factor = 0.035;
+    else if(age <= 50) factor = 0.055;
+    else factor = 0.08;
+    const beitrag = Math.round(rente * factor);
+    document.getElementById('bu-gap').textContent = luecke.toLocaleString('de-DE') + ' €';
+    document.getElementById('bu-rente').textContent = rente.toLocaleString('de-DE') + ' €';
+    document.getElementById('bu-beitrag').textContent = 'ca. ' + beitrag.toLocaleString('de-DE') + ' €';
+  }
+  [ageEl, nettoEl, bestEl].forEach(el => el.addEventListener('input', calc));
+  calc();
+})();
+</script>
 
 <div class="section-divider"></div>
 
