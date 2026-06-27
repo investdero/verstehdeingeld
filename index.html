@@ -43,34 +43,84 @@
         .gold { color: #FFD700; }
         .container { max-width: 720px; margin: 0 auto; padding: 20px; position: relative; z-index: 1; }
 
-        /* --- Top-Navigation --- */
-        .topnav {
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            background: rgba(10,10,10,0.85);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,215,0,0.15);
+        /* --- Burger Menü --- */
+        .burger-btn {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            z-index: 200;
+            background: rgba(17,17,17,0.9);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 10px;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
             display: flex;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            gap: 28px;
-            padding: 12px 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 14px;
+            gap: 5px;
+            transition: all 0.2s;
         }
-        .topnav a {
+        .burger-btn:hover { border-color: #FFD700; }
+        .burger-btn span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: #FFD700;
+            border-radius: 2px;
+            transition: all 0.25s;
+        }
+        .burger-btn.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+        .burger-btn.open span:nth-child(2) { opacity: 0; }
+        .burger-btn.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 280px;
+            max-width: 85vw;
+            height: 100%;
+            background: rgba(10,10,10,0.97);
+            backdrop-filter: blur(12px);
+            border-left: 1px solid rgba(255,215,0,0.2);
+            z-index: 199;
+            padding: 90px 30px 30px;
+            transition: right 0.3s ease;
+            box-shadow: -10px 0 40px rgba(0,0,0,0.5);
+        }
+        .mobile-nav.open { right: 0; }
+        .mobile-nav a {
+            display: block;
             color: #d4d4d4;
             text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 17px;
+            padding: 16px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
             transition: color 0.2s;
-            letter-spacing: 0.3px;
         }
-        .topnav a:hover { color: #FFD700; }
-        .topnav .nav-sep { color: rgba(255,215,0,0.4); }
-        @media (max-width: 480px) {
-            .topnav { gap: 14px; font-size: 12px; padding: 10px 12px; flex-wrap: wrap; }
+        .mobile-nav a:hover { color: #FFD700; }
+        .mobile-nav .nav-label {
+            color: #888;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
         }
-        /* --- Ende Navigation --- */
+        .nav-backdrop {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 198;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.3s;
+        }
+        .nav-backdrop.open { opacity: 1; pointer-events: all; }
+        /* --- Ende Burger Menü --- */
 
         .header { text-align: center; padding: 50px 20px 30px; }
         .logo { width: 280px; height: auto; margin: 0 auto 15px; display: block; filter: drop-shadow(0 0 25px rgba(255, 215, 0, 0.4)); }
@@ -84,8 +134,8 @@
         .form-hint { font-size: 13px; color: #999; margin: -8px 0 16px; text-align: center; }
         input { width: 100%; padding: 17px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 10px; color: #fff; font-size: 16px; font-family: 'Inter', sans-serif; transition: all 0.2s; }
         input:focus { outline: none; border-color: #FFD700; background: rgba(255, 255, 255, 0.08); box-shadow: 0 0 20px rgba(255, 215, 0, 0.15); }
-        button { width: 100%; padding: 19px; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #0a0a0a; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
-        button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); }
+        button[type="submit"] { width: 100%; padding: 19px; background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); color: #0a0a0a; border: none; border-radius: 10px; font-size: 18px; font-weight: 700; cursor: pointer; transition: all 0.2s; letter-spacing: 0.3px; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3); }
+        button[type="submit"]:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(255, 215, 0, 0.5); }
         .trust { text-align: center; font-size: 13px; color: #888; margin-top: 16px; font-weight: 500; }
         .bereiche { margin: 60px 0 40px; }
         .bereiche h2 { text-align: center; margin-bottom: 30px; font-size: 1.8rem; }
@@ -108,12 +158,15 @@
     </style>
 </head>
 <body>
-    <!-- Top-Navigation -->
-    <nav class="topnav">
+    <!-- Burger Menü -->
+    <button class="burger-btn" id="burgerBtn" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+    </button>
+    <div class="nav-backdrop" id="navBackdrop"></div>
+    <nav class="mobile-nav" id="mobileNav">
+        <div class="nav-label">Navigation</div>
         <a href="/">Startseite</a>
-        <span class="nav-sep">|</span>
         <a href="/d2/">Für Vereinsfreunde</a>
-        <span class="nav-sep">|</span>
         <a href="/yachtversicherung.html">Für Yachtingfreunde</a>
     </nav>
 
@@ -125,7 +178,6 @@
         <div class="header">
             <img src="logo.PNG" alt="Versteh DeinGeld" class="logo">
             <p class="logo-text gold">HOL DIR DEINEN FINANZ-TÜV</p>
-            <!-- FINETUNING: "01.07." raus -->
             <p class="badge">Ich bin unabhängiger Berater für Privatkunden und Selbstständige | Mein Verdienst ist deine Empfehlung!</p>
         </div>
         <div class="hero">
@@ -144,12 +196,10 @@
                 <div class="form-group"><input type="tel" name="phone" placeholder="Deine Handynummer für WhatsApp"></div>
                 <p class="form-hint">Bitte E-Mail oder Handynummer angeben</p>
                 
-                <!-- FINETUNING: Social Proof -->
                 <p class="social-proof">
                     ✓ <strong style="color: #FFD700;">Heute schon <span id="dl-counter">37</span>x angefordert</strong> – 100% kostenlos & unverbindlich
                 </p>
                 
-                <!-- FINETUNING: DSGVO-Checkbox -->
                 <label class="dsgvo-checkbox">
                     <input type="checkbox" name="datenschutz" required>
                     Ich stimme der Verarbeitung meiner Daten gemäß der <a href="datenschutz.html" target="_blank">Datenschutzerklärung</a> zu. Ich kann mich jederzeit abmelden.
@@ -170,8 +220,8 @@
                 <div class="karte"><span class="icon">👴</span><h3>ALTERSVORSORGE</h3><p>Reicht meine Rente später?</p></div>
                 <div class="karte"><span class="icon">🔑</span><h3>IMMOBILIENVERMITTLUNG</h3><p>Kaufen, verkaufen oder finanzieren?</p></div>
             </div>
+        </div>
         <div class="footer">
-            <!-- FINETUNING: "Ab 01.07." raus -->
             <p><strong>Dennis Rosenburg | Finanzberater bei SwissLife Select</strong></p>
             <p style="margin: 14px 0; line-height: 1.6;">IHK-Zulassung §34d GewO, §34f GewO, §34i GewO & §34c GewO in Beantragung. Erstinformation auf Anfrage.</p>
             <a href="https://wa.me/491725693073?text=Hi%20Dennis,%20ich%20hab%20mich%20für%20den%20Finanz-TÜV%20eingetragen" class="whatsapp">💬 WhatsApp: Direkte Frage stellen</a>
@@ -179,6 +229,7 @@
     </div>
     
     <script>
+        // Form-Validation
         document.getElementById('wartelisteForm').addEventListener('submit', function(e) {
             var email = this.querySelector('input[name="email"]').value.trim();
             var phone = this.querySelector('input[name="phone"]').value.trim();
@@ -189,13 +240,26 @@
             }
         });
         
-        // FINETUNING: Social Proof Counter
+        // Social Proof Counter
         let dlCount = 37;
         document.getElementById('dl-counter').innerText = dlCount;
         setInterval(() => {
             dlCount += Math.floor(Math.random() * 2) + 1;
             document.getElementById('dl-counter').innerText = dlCount;
         }, Math.random() * 180000 + 120000);
+
+        // Burger Menü
+        const burgerBtn = document.getElementById('burgerBtn');
+        const mobileNav = document.getElementById('mobileNav');
+        const navBackdrop = document.getElementById('navBackdrop');
+        function toggleNav() {
+            burgerBtn.classList.toggle('open');
+            mobileNav.classList.toggle('open');
+            navBackdrop.classList.toggle('open');
+            document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
+        }
+        burgerBtn.addEventListener('click', toggleNav);
+        navBackdrop.addEventListener('click', toggleNav);
     </script>
     
 <!-- Footer -->
@@ -215,7 +279,6 @@
             <a href="https://www.instagram.com/dennis.rosenburg.sls" target="_blank" style="color: #ffffff; text-decoration: none; margin: 0 15px; transition: 0.3s;" onmouseover="this.style.color='#f59e0b'" onmouseout="this.style.color='#ffffff'">Instagram</a>
         </p>
 
-        <!-- FINETUNING: "keine Vermittlung vor 07/2026" raus -->
         <p style="font-size: 12px; color: #999; margin-top: 25px; line-height: 1.6;">
             © 2026 Dennis Rosenburg. Alle Rechte vorbehalten.<br>
             <span style="color: #f59e0b;">Kostenlose Erstinformation</span> – unverbindlich & unabhängig.
