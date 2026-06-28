@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Deutsche Yacht in Kroatien? | VerstehDeinGeld</title>
-    <meta name="description" content="Kostenloser Yacht-Check für deutsche Eigner in Kroatien. Unabhängige Finanzberatung von Dennis Rosenburg | Partner Swiss Life Select.">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Yachtversicherung Kroatien 2026 – SeaHelp, Crew-Haftpflicht checken | VerstehDeinGeld</title>
+    <meta name="description" content="Deutsche Yacht in Kroatien? 80% der Policen haben Lücken bei SeaHelp-Bergung & Crew-Haftpflicht. Kostenloser Deckungslücken-Rechner + 24h Yacht-Check von Dennis Rosenburg.">
+    <meta property="og:title" content="Yachtversicherung Kroatien – Kostenloser Deckungslücken-Check">
+    <meta property="og:description" content="Berechne in 3 Minuten dein Risiko für SeaHelp, Crew-Haftpflicht & Charter. Unabhängig.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -18,7 +23,7 @@
             overflow-x: hidden; 
         }
         
-        /* NUR VIDEO NEU - SONST ALLES V9 */
+        /* Video Background */
         .video-bg { 
             position: fixed; 
             top: 0; 
@@ -34,9 +39,9 @@
             left: 50%; 
             min-width: 100%; 
             min-height: 100%; 
-            transform: translate(-50%, -50%) scale(1.15); /* WASSERZEICHEN WEG */
+            transform: translate(-50%, -50%) scale(1.15);
             object-fit: cover;
-            filter: brightness(0.25); /* SEHR DUNKEL */
+            filter: brightness(0.25);
         }
         .video-overlay { 
             position: fixed; 
@@ -57,11 +62,11 @@
         h2 { font-size: 32px; margin-bottom: 30px; }
         a { cursor: pointer !important; text-decoration: none; color: inherit; }
         
-        /* Header V9 - LOGO GROSS */
+        /* Header */
         .header { text-align: center; padding: 40px 0 20px; }
         .header img { height: 120px; max-width: 400px; }
         
-        /* Hero V9 */
+        /* Hero */
         .trust-badge { 
             color: #C9A961; 
             font-size: 14px; 
@@ -71,7 +76,7 @@
         }
         .hero p { font-size: 18px; margin-bottom: 30px; color: #CCCCCC; }
         
-        /* Buttons V9 */
+        /* Buttons */
         .btn-whatsapp { 
             display: inline-flex; 
             align-items: center; 
@@ -83,6 +88,8 @@
             font-weight: 600; 
             font-size: 18px; 
             transition: background 0.3s;
+            border: none;
+            cursor: pointer;
         }
         .btn-whatsapp:hover { background: #1DA851; }
         .btn-whatsapp svg { width: 24px; height: 24px; }
@@ -105,7 +112,7 @@
         .btn-floating:hover { transform: scale(1.1); }
         .btn-floating svg { width: 32px; height: 32px; }
         
-        /* Trust Liste V9 */
+        /* Trust Liste */
         .trust-list { margin: 30px 0; }
         .trust-item { 
             color: #fff; 
@@ -122,7 +129,7 @@
             font-size: 20px;
         }
         
-        /* DECKUNGSLÜCKEN V9 - SCHWARZ/GOLD/WEISS */
+        /* DECKUNGSLÜCKEN */
         .gaps-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -153,7 +160,84 @@
             margin-bottom: 15px;
         }
         
-        /* CROSS SELLING V9 */
+        /* ===== RECHNER - VDG DARK STYLE ===== */
+        .calc-wrap { max-width: 760px; margin: 0 auto; }
+        .calc-eyebrow { color:#C9A961; font-size:13px; letter-spacing:1.5px; text-transform:uppercase; margin-bottom:10px; text-align:center;}
+        .calc-title { color:#fff; font-size:32px; text-align:center; margin-bottom:8px;}
+        .calc-sub { color:#b9b9b9; text-align:center; margin-bottom:28px;}
+        /* Result */
+        .calc-result {
+            background: linear-gradient(180deg, #141414 0%, #111111 100%);
+            border: 1px solid #2a2a2a;
+            border-radius: 14px;
+            padding: 22px 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+        }
+        .calc-result-top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px; align-items:flex-start;}
+        .calc-kicker { font-size:12px; color:#a08a5a; text-transform:uppercase; letter-spacing:.06em; font-weight:600;}
+        .calc-amount { font-size: clamp(34px, 6vw, 44px); font-weight:700; color:#fff; font-variant-numeric: tabular-nums; letter-spacing:-0.02em; font-family:'Montserrat',sans-serif;}
+        .calc-formula { font-size:12.5px; color:#999; margin-top:6px;}
+        .risk-badge { display:inline-flex; align-items:center; gap:7px; font-size:12.5px; font-weight:700; padding:7px 12px; border-radius:999px; white-space:nowrap;}
+        .risk-badge .dot{width:8px;height:8px;border-radius:50%}
+        .risk-low { background:#0f2a1a; color:#6fe3a6; border:1px solid #1b4d30}
+        .risk-low .dot{background:#25d366}
+        .risk-mid { background:#2a2108; color:#f0c86a; border:1px solid #4a3a12}
+        .risk-mid .dot{background:#C9A961}
+        .risk-high { background:#2a0f14; color:#ff8a9a; border:1px solid #4a1a24}
+        .risk-high .dot{background:#ff4d67}
+        /* Traffic lights */
+        .tl-grid { display:grid; grid-template-columns:1fr; gap:10px; margin-bottom:18px;}
+        @media(min-width:600px){ .tl-grid{ grid-template-columns: repeat(3,1fr);} }
+        .tl-card { border-radius:12px; padding:14px; border:1px solid #2a2a2a; background:#111;}
+        .tl-card.is-green{ background:#0f1a14; border-color:#1d3a28}
+        .tl-card.is-amber{ background:#1a160d; border-color:#3a2e15}
+        .tl-card.is-red{ background:#1a0f13; border-color:#3a1a24}
+        .tl-head{ display:flex; align-items:center; gap:8px; font-size:12px; font-weight:600; color:#a9a9a9; margin-bottom:4px;}
+        .tl-dot{ width:9px;height:9px;border-radius:50%; flex-shrink:0;}
+        .tl-dot.green{background:#25d366}
+        .tl-dot.amber{background:#C9A961}
+        .tl-dot.red{background:#ff4d67}
+        .tl-title{ font-weight:700; font-size:15px; color:#fff;}
+        .tl-note{ font-size:13px; color:#b0b0b0; margin-top:4px;}
+        /* Form */
+        .calc-form {
+            background:#111111;
+            border:1px solid #2a2a2a;
+            border-radius:14px;
+            padding:24px;
+            margin-bottom:16px;
+        }
+        .calc-form-grid{ display:grid; gap:18px;}
+        .calc-row-2{ display:grid; gap:18px;}
+        @media(min-width:600px){ .calc-row-2{ grid-template-columns:1fr 1fr; } }
+        .calc-field label{ display:block; font-size:13.5px; font-weight:600; color:#C9A961; margin-bottom:7px;}
+        .calc-field input[type="number"], .calc-field select{
+            width:100%; font:inherit; font-size:16px; color:#fff; background:#0c0c0c;
+            border:1.5px solid #333; border-radius:10px; padding:13px 14px; outline:none;
+        }
+        .calc-field input:focus, .calc-field select:focus{ border-color:#C9A961; box-shadow:0 0 0 3px rgba(201,169,97,0.15);}
+        .calc-field select{ appearance:none; background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='none' stroke='%23C9A961' stroke-width='2' viewBox='0 0 24 24'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E"); background-repeat:no-repeat; background-position:right 13px center; padding-right:40px;}
+        .calc-hint{ font-size:12.5px; color:#999; margin-top:6px;}
+        /* Radios */
+        .radio-group{ display:flex; flex-wrap:wrap; gap:8px;}
+        .radio-pill{ position:relative; flex:1 1 auto; min-width:92px;}
+        .radio-pill input{ position:absolute; opacity:0; inset:0; width:100%; height:100%; cursor:pointer;}
+        .radio-pill span{ display:block; text-align:center; padding:11px 14px; border-radius:10px; border:1.5px solid #333; background:#0c0c0c; font-size:14px; font-weight:600; color:#ccc; transition:all .13s; user-select:none;}
+        .radio-pill input:checked + span{ border-color:#C9A961; background:#1a1610; color:#C9A961;}
+        /* Tipps */
+        .calc-tips{ background:#121212; border:1px solid #2a2a2a; border-radius:14px; padding:20px; margin-bottom:18px;}
+        .calc-tips h3{ color:#fff; font-size:18px; margin-bottom:10px;}
+        .tip-list{ list-style:none; display:grid; gap:10px;}
+        .tip-list li{ display:flex; gap:10px; align-items:flex-start; font-size:14.5px; color:#d0d0d0;}
+        .tip-check{ flex-shrink:0; width:22px; height:22px; border-radius:50%; background:#1a1610; color:#C9A961; display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:800;}
+        /* CTA card in calc */
+        .calc-cta{ background:#151515; border:1px solid #2a2a2a; border-radius:14px; padding:24px; text-align:center;}
+        .calc-cta h3{ color:#fff; font-size:20px; margin-bottom:6px;}
+        .calc-cta p{ color:#bdbdbd; margin-bottom:16px;}
+        .calc-cta-note{ margin-top:12px; font-size:12.5px; color:#999;}
+        
+        /* CROSS SELLING */
         .cross-sell {
             background: #111111;
             border-radius: 8px;
@@ -183,7 +267,13 @@
             margin-right: 8px;
         }
         
-        /* Footer V9 */
+        /* FAQ */
+        .faq-grid { display:grid; gap:16px; max-width:760px; margin:0 auto;}
+        .faq-item { background:#111; border:1px solid #222; border-radius:10px; padding:20px 22px;}
+        .faq-item h3 { color:#fff; font-size:18px; margin-bottom:8px;}
+        .faq-item p { color:#ccc; font-size:15px;}
+
+        /* Footer */
         .footer { 
             border-top: 1px solid #222; 
             padding: 40px 0; 
@@ -194,7 +284,7 @@
         .footer a { color: #C9A961; }
         .footer a:hover { text-decoration: underline; }
         
-        /* Mobile V9 */
+        /* Mobile */
         @media (max-width: 768px) {
             h1 { font-size: 32px; }
             h2 { font-size: 24px; }
@@ -202,6 +292,7 @@
             .btn-whatsapp { width: 100%; justify-content: center; }
             section { padding: 40px 0; }
             .gaps-grid { grid-template-columns: 1fr; }
+            .calc-form { padding:18px; }
         }
 
         /* --- Burger Menü --- */
@@ -291,10 +382,32 @@
       "name": "VerstehDeinGeld - Dennis Rosenburg",
       "url": "https://verstehdeingeld.de",
       "telephone": "+49-172-5693073",
-      "address": {
-        "@type": "PostalAddress",
-        "addressCountry": "DE"
-      }
+      "address": { "@type": "PostalAddress", "addressCountry": "DE" },
+      "areaServed": "DE",
+      "description": "Unabhängige Finanzberatung für Yacht-Eigner in Kroatien. Yacht-Check, BU, Altersvorsorge."
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Zahlt meine deutsche Yachtversicherung SeaHelp in Kroatien?",
+          "acceptedAnswer": {"@type": "Answer","text": "Oft nicht. Viele deutsche Kasko-Policen schließen Bergung durch SeaHelp in kroatischen Gewässern aus oder deckeln stark. Prüfe Bergungskosten und Schlepp-Hilfe separat, ideal min. 10.000 €."}
+        },
+        {
+          "@type": "Question",
+          "name": "Brauche ich eine Crew-Haftpflicht für Gäste an Bord?",
+          "acceptedAnswer": {"@type": "Answer","text": "Ja. Verletzt sich ein Gast, haftest du persönlich. Viele Policen schließen Charter-Gäste / Mitsegler aus. Lass Crew-Haftpflicht ausdrücklich einschließen."}
+        },
+        {
+          "@type": "Question",
+          "name": "Ist meine Yacht bei Charter / Kostenbeteiligung versichert?",
+          "acceptedAnswer": {"@type": "Answer","text": "Standard-Policen decken gewerbliche Nutzung meist nicht. Auch Mitsegler gegen Kostenbeteiligung kann als Charter gelten. Hole dir eine schriftliche Charterklausel, sonst droht Leistungsfreiheit."}
+        }
+      ]
     }
     </script>
 </head>
@@ -337,7 +450,7 @@
             
             <p>Zahlt deine Versicherung wenn SeaHelp dich bergen muss? Der Yacht-Check ist kostenlos und unverbindlich. Wenn du magst, schauen wir danach auch auf BU, Altersvorsorge & Co. Ich arbeite unabhängig – u.a. mit Swiss Life Select.</p>
             
-            <a href="https://wa.me/message/NAB5UQOF54WCA1" target="_blank" class="btn-whatsapp">
+            <a href="https://wa.me/491725693073" target="_blank" class="btn-whatsapp" id="hero-wa">
                 <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.333 0 2.35.618 4.642 1.794 6.663L2.667 29.333l6.833-1.792c1.936 1.06 4.127 1.622 6.391 1.623h.003c7.363 0 13.334-5.97 13.334-13.334C29.328 8.637 23.364 2.667 16.001 2.667zm7.733 19.207c-.333.933-1.967 1.783-2.71 1.897-.684.107-1.553.152-2.503-.157-.577-.188-1.317-.43-2.267-.842-3.986-1.722-6.587-5.762-6.787-6.028-.2-.267-1.633-2.167-1.633-4.133 0-1.967 1.033-2.933 1.4-3.333.367-.4.8-.5 1.067-.5.267 0 .533.002.767.014.247.012.577-.093.903.687.333.8 1.133 2.767 1.233 2.967.1.2.167.433.033.7-.133.267-.2.433-.4.667-.2.233-.42.52-.6.7-.2.2-.407.42-.173.82.233.4 1.037 1.71 2.227 2.77 1.533 1.367 2.827 1.792 3.227 1.992.4.2.633.167.867-.1.233-.267 1-1.167 1.267-1.567.267-.4.533-.333.9-.2.367.133 2.32 1.094 2.72 1.294.4.2.667.3.767.467.1.167.1.967-.233 1.9z" fill="#fff"/>
                 </svg>
@@ -379,74 +492,102 @@
         </div>
     </section>
 
-    <!-- Cross Selling -->
-    <section>
+    <!-- ===== RECHNER SECTION ===== -->
+    <section id="rechner">
         <div class="container">
-            <div class="cross-sell">
-                <h3>Yacht abgesichert? Dann schauen wir auch auf den Rest.</h3>
-                <p style="color: #CCCCCC;">Als unabhängiger Berater checke ich für dich:</p>
-                <div class="cross-sell-items">
-                    <div class="cross-item">Berufsunfähigkeit</div>
-                    <div class="cross-item">Altersvorsorge</div>
-                    <div class="cross-item">Krankenversicherung</div>
-                    <div class="cross-item">Immobilienfinanzierung</div>
-                    <div class="cross-item">Vermögensaufbau</div>
+            <div class="calc-wrap">
+                <div class="calc-eyebrow">Kostenlos · 3 Minuten · Keine E-Mail</div>
+                <h2 class="calc-title">Yacht-Deckungslücken-Rechner Kroatien</h2>
+                <p class="calc-sub">Berechne dein persönliches Risiko für SeaHelp, Crew & Charter.</p>
+
+                <!-- Live Ergebnis -->
+                <div class="calc-result" aria-live="polite">
+                    <div class="calc-result-top">
+                        <div>
+                            <div class="calc-kicker">Dein Deckungslücken-Risiko</div>
+                            <div class="calc-amount" id="result-amount">27.600 €</div>
+                            <div class="calc-formula" id="result-formula">SeaHelp 4.000 € + Crew 12.000 € + Charter 0 € × Faktor 1,2 (Kroatien)</div>
+                        </div>
+                        <div class="risk-badge risk-mid" id="risk-badge"><span class="dot"></span><span id="risk-badge-text">Mittleres Risiko</span></div>
+                    </div>
                 </div>
-                <p style="color: #999; font-size: 14px; margin-top: 30px;">Ein Ansprechpartner für alle Finanzfragen. Ohne Verkaufsdruck.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- CTA Section -->
-    <section style="text-align: center; background: #111111;">
-        <div class="container">
-            <h2>Bereit für deinen kostenlosen Yacht-Check?</h2>
-            <p style="color: #CCCCCC; margin-bottom: 30px;">Schreib mir kurz auf WhatsApp. Ich melde mich persönlich bei dir.</p>
-            
-            <a href="https://wa.me/message/NAB5UQOF54WCA1" target="_blank" class="btn-whatsapp">
-                <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.333 0 2.35.618 4.642 1.794 6.663L2.667 29.333l6.833-1.792c1.936 1.06 4.127 1.622 6.391 1.623h.003c7.363 0 13.334-5.97 13.334-13.334C29.328 8.637 23.364 2.667 16.001 2.667zm7.733 19.207c-.333.933-1.967 1.783-2.71 1.897-.684.107-1.553.152-2.503-.157-.577-.188-1.317-.43-2.267-.842-3.986-1.722-6.587-5.762-6.787-6.028-.2-.267-1.633-2.167-1.633-4.133 0-1.967 1.033-2.933 1.4-3.333.367-.4.8-.5 1.067-.5.267 0 .533.002.767.014.247.012.577-.093.903.687.333.8 1.133 2.767 1.233 2.967.1.2.167.433.033.7-.133.267-.2.433-.4.667-.2.233-.42.52-.6.7-.2.2-.407.42-.173.82.233.4 1.037 1.71 2.227 2.77 1.533 1.367 2.827 1.792 3.227 1.992.4.2.633.167.867-.1.233-.267 1-1.167 1.267-1.567.267-.4.533-.333.9-.2.367.133 2.32 1.094 2.72 1.294.4.2.667.3.767.467.1.167.1.967-.233 1.9z" fill="#fff"/>
-                </svg>
-                Kostenlose Einschätzung anfragen
-            </a>
-        </div>
-    </section>
+                <!-- Ampel -->
+                <div class="tl-grid">
+                    <div class="tl-card is-amber" id="tl-seahelp">
+                        <div class="tl-head"><span class="tl-dot amber" id="tl-seahelp-dot"></span> Bergung / SeaHelp</div>
+                        <div class="tl-title" id="tl-seahelp-title">Unsicher</div>
+                        <div class="tl-note" id="tl-seahelp-note">Abschleppen in HR oft 4.000–12.000 €.</div>
+                    </div>
+                    <div class="tl-card is-amber" id="tl-crew">
+                        <div class="tl-head"><span class="tl-dot amber" id="tl-crew-dot"></span> Crew-Haftpflicht</div>
+                        <div class="tl-title" id="tl-crew-title">Unsicher</div>
+                        <div class="tl-note" id="tl-crew-note">Personenschäden an Gästen schnell 6-stellig.</div>
+                    </div>
+                    <div class="tl-card is-green" id="tl-charter">
+                        <div class="tl-head"><span class="tl-dot green" id="tl-charter-dot"></span> Nutzung</div>
+                        <div class="tl-title" id="tl-charter-title">Privat</div>
+                        <div class="tl-note" id="tl-charter-note">Keine Charter-Risiken erkannt.</div>
+                    </div>
+                </div>
 
-    <!-- Floating WhatsApp -->
-    <a href="https://wa.me/message/NAB5UQOF54WCA1" target="_blank" class="btn-floating">
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M16.001 2.667c-7.363 0-13.334 5.97-13.334 13.333 0 2.35.618 4.642 1.794 6.663L2.667 29.333l6.833-1.792c1.936 1.06 4.127 1.622 6.391 1.623h.003c7.363 0 13.334-5.97 13.334-13.334C29.328 8.637 23.364 2.667 16.001 2.667zm7.733 19.207c-.333.933-1.967 1.783-2.71 1.897-.684.107-1.553.152-2.503-.157-.577-.188-1.317-.43-2.267-.842-3.986-1.722-6.587-5.762-6.787-6.028-.2-.267-1.633-2.167-1.633-4.133 0-1.967 1.033-2.933 1.4-3.333.367-.4.8-.5 1.067-.5.267 0 .533.002.767.014.247.012.577-.093.903.687.333.8 1.133 2.767 1.233 2.967.1.2.167.433.033.7-.133.267-.2.433-.4.667-.2.233-.42.52-.6.7-.2.2-.407.42-.173.82.233.4 1.037 1.71 2.227 2.77 1.533 1.367 2.827 1.792 3.227 1.992.4.2.633.167.867-.1.233-.267 1-1.167 1.267-1.567.267-.4.533-.333.9-.2.367.133 2.32 1.094 2.72 1.294.4.2.667.3.767.467.1.167.1.967-.233 1.9z" fill="#fff"/>
-        </svg>
-    </a>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p><strong>VerstehDeinGeld - Dennis Rosenburg</strong></p>
-            <p>Unabhängiger Finanzberater | Offizieller Vertriebspartner Swiss Life Select ab 01.07.2026</p>
-            <p style="margin-top: 20px;">
-                <a href="https://verstehdeingeld.de" target="_blank">verstehdeingeld.de</a> | 
-                <a href="https://verstehdeingeld.de/impressum" target="_blank">Impressum</a> | 
-                <a href="https://verstehdeingeld.de/datenschutz" target="_blank">Datenschutz</a>
-            </p>
-            <p style="margin-top: 20px; font-size: 12px;">© 2026 VerstehDeinGeld</p>
-        </div>
-    </footer>
-
-<script>
-// Burger Menü
-const burgerBtn = document.getElementById('burgerBtn');
-const mobileNav = document.getElementById('mobileNav');
-const navBackdrop = document.getElementById('navBackdrop');
-function toggleNav() {
-    burgerBtn.classList.toggle('open');
-    mobileNav.classList.toggle('open');
-    navBackdrop.classList.toggle('open');
-    document.body.style.overflow = mobileNav.classList.contains('open') ? 'hidden' : '';
-}
-burgerBtn.addEventListener('click', toggleNav);
-navBackdrop.addEventListener('click', toggleNav);
-</script>
-
-</body>
-</html>
+                <!-- Form -->
+                <form id="calc-form" class="calc-form" autocomplete="off" novalidate>
+                    <div class="calc-form-grid">
+                        <div class="calc-row-2">
+                            <div class="calc-field">
+                                <label for="yachtwert">Yachtwert (€)</label>
+                                <input type="number" id="yachtwert" min="5000" max="5000000" step="5000" value="150000">
+                                <div class="calc-hint">Wird für die WhatsApp-Zusammenfassung genutzt.</div>
+                            </div>
+                            <div class="calc-field">
+                                <label for="crewgaeste">Crew-Gäste pro Jahr</label>
+                                <input type="number" id="crewgaeste" min="0" max="60" step="1" value="4">
+                            </div>
+                        </div>
+                        <div class="calc-row-2">
+                            <div class="calc-field">
+                                <label for="nutzung">Nutzungsart</label>
+                                <select id="nutzung">
+                                    <option value="privat" selected>Privat</option>
+                                    <option value="charter_mitsegler">Charter / Mitsegler gegen Kostenbeteiligung</option>
+                                    <option value="gewerblich">Gewerbliche Vercharterung</option>
+                                </select>
+                                <div class="calc-hint">Auch Kostenbeteiligung kann als Charter gelten.</div>
+                            </div>
+                            <div class="calc-field">
+                                <label for="liegeplatz">Liegeplatz</label>
+                                <select id="liegeplatz">
+                                    <option value="kroatien" selected>Kroatien</option>
+                                    <option value="italien_adria">Italien / Adria</option>
+                                    <option value="andere">Andere</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="calc-field">
+                            <label>SeaHelp / Bergungskosten versichert?</label>
+                            <div class="radio-group">
+                                <label class="radio-pill"><input type="radio" name="seahelp" value="ja"><span>Ja</span></label>
+                                <label class="radio-pill"><input type="radio" name="seahelp" value="unsicher" checked><span>Unsicher</span></label>
+                                <label class="radio-pill"><input type="radio" name="seahelp" value="nein"><span>Nein</span></label>
+                            </div>
+                        </div>
+                        <div class="calc-field">
+                            <label>Crew-Haftpflicht für Gäste inklusive?</label>
+                            <div class="radio-group">
+                                <label class="radio-pill"><input type="radio" name="crew" value="ja"><span>Ja</span></label>
+                                <label class="radio-pill"><input type="radio" name="crew" value="unsicher" checked><span>Unsicher</span></label>
+                                <label class="radio-pill"><input type="radio" name="crew" value="nein"><span>Nein</span></label>
+                            </div>
+                        </div>
+                        <div class="calc-field">
+                            <label>Skipper-Haftpflicht separat?</label>
+                            <div class="radio-group">
+                                <label class="radio-pill"><input type="radio" name="skipper" value="ja"><span>Ja</span></label>
+                                <label class="radio-pill"><input type="radio" name="skipper" value="nein" checked><span>Nein</span></label>
+                            </div>
+                            <div class="calc-hint">Wichtig bei Eigner ≠ Skipper.</div>
+                        </div>
+                    </div>
+                </form>
+                
